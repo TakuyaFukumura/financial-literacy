@@ -1,6 +1,7 @@
 'use client';
 
 import {useSyncExternalStore} from 'react';
+import Link from 'next/link';
 import {useDarkMode} from './DarkModeProvider';
 
 const emptySubscribe = () => () => {
@@ -33,11 +34,12 @@ export default function Header() {
             border-gray-200 dark:border-gray-700 sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
-                    <div className="flex items-center">
-                        <h1 className="text-xl font-semibold text-gray-800 dark:text-gray-200">
-                            financial-literacy
-                        </h1>
-                    </div>
+                    <Link
+                        href="/"
+                        className="text-xl font-semibold text-gray-800 dark:text-gray-200"
+                    >
+                        お金の学び場
+                    </Link>
 
                     <div className="flex items-center">
                         <button

@@ -1,109 +1,86 @@
-'use client';
+import Link from 'next/link';
 
-import {useCallback, useEffect, useRef, useState} from 'react';
-import {isErrorResponse, isMessageResponse} from '../types/api';
+const topics = [
+    {
+        href: '/learn/compound-interest',
+        category: '資産形成の基本',
+        title: '複利',
+        description: '利息が利息を生む仕組みを、基礎から学びます。',
+    },
+    {
+        href: '/learn/nisa',
+        category: '制度を知る',
+        title: 'NISA',
+        description: '投資の利益が非課税になる制度の基本を学びます。',
+    },
+];
 
 export default function Home() {
-    const [message, setMessage] = useState<string | null>(null);
-    const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<string | null>(null);
-    const requestController = useRef<AbortController | null>(null);
-
-    const fetchMessage = useCallback(async () => {
-        requestController.current?.abort();
-        const controller = new AbortController();
-        requestController.current = controller;
-        setLoading(true);
-        setError(null);
-
-        try {
-            const response = await fetch('/api/message', {signal: controller.signal});
-            const data: unknown = await response.json();
-
-            if (!response.ok) {
-                throw new Error(
-                    isErrorResponse(data) ? data.error : 'メッセージの取得に失敗しました'
-                );
-            }
-
-            if (!isMessageResponse(data)) {
-                throw new Error('APIレスポンスの形式が不正です');
-            }
-
-            setMessage(data.message);
-        } catch (err) {
-            if (err instanceof Error && err.name === 'AbortError') {
-                return;
-            }
-            setError(err instanceof Error ? err.message : '予期しないエラーが発生しました');
-        } finally {
-            if (!controller.signal.aborted) {
-                setLoading(false);
-            }
-        }
-    }, []);
-
-    useEffect(() => {
-        // 初回表示時にAPIを取得し、取得完了後に表示状態を更新する。
-        // eslint-disable-next-line react-hooks/set-state-in-effect
-        void fetchMessage();
-        return () => {
-            requestController.current?.abort();
-        };
-    }, [fetchMessage]);
-
-    let content;
-    if (loading) {
-        content = (
-            <div className="flex items-center justify-center">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-                <span className="ml-2 text-gray-600 dark:text-gray-400">読み込み中...</span>
-            </div>
-        );
-    } else if (error) {
-        content = (
-            <div className="text-red-600 dark:text-red-400 p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
-                エラー: {error}
-                <button
-                    type="button"
-                    onClick={() => void fetchMessage()}
-                    className="mt-4 block mx-auto rounded bg-red-600 px-4 py-2 text-white hover:bg-red-700"
-                >
-                    再試行
-                </button>
-            </div>
-        );
-    } else {
-        content = (
-            <div
-                className="text-2xl font-semibold text-blue-600 dark:text-blue-400 p-6 bg-blue-50 dark:bg-blue-900/20 rounded-xl border-2 border-blue-200 dark:border-blue-700">
-                {message}
-            </div>
-        );
-    }
-
     return (
-        <div
-            className="font-sans flex items-center justify-center min-h-[calc(100vh-4rem)] bg-linear-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
-            <main className="text-center p-8">
-                <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-12 max-w-md mx-auto">
-                    <h1 className="text-4xl font-bold mb-8 text-gray-800 dark:text-gray-200">
-                        financial-literacy
-                    </h1>
-
-                    <div className="mb-8">
-                        {content}
-                    </div>
-
-                    <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-                        このメッセージはSQLiteデータベースから取得されています
+        <main className="min-h-[calc(100vh-4rem)] bg-gradient-to-b from-amber-50 to-white px-4 py-16 dark:from-gray-900 dark:to-gray-950 sm:px-6 sm:py-24">
+            <div className="mx-auto max-w-5xl">
+                <section aria-labelledby="welcome-heading" className="mb-16 max-w-3xl">
+                    <p className="mb-4 text-sm font-semibold tracking-widest text-emerald-700 dark:text-emerald-400">
+                        金融リテラシー入門
                     </p>
+                    <h1 id="welcome-heading" className="text-4xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white sm:text-6xl">
+                        お金のことを、
+                        <br/>
+                        基礎から学ぼう。
+                    </h1>
+                    <p className="mt-6 max-w-2xl text-lg leading-8 text-gray-600 dark:text-gray-300">
+                        暮らしに役立つお金の知識を、身近なテーマからわかりやすく紹介します。
+                        気になるテーマを選んで、ひとつずつ学んでみましょう。
+                    </p>
+                </section>
 
-                    <div className="text-xs text-gray-400 dark:text-gray-500">
-                        Next.js + TypeScript + Tailwind CSS + SQLite
+                <section aria-labelledby="topics-heading">
+                    <div className="mb-6 flex items-end justify-between">
+                        <div>
+                            <p className="text-sm font-medium text-gray-500 dark:text-gray-400">LEARN</p>
+                            <h2 id="topics-heading" className="mt-1 text-2xl font-bold text-gray-900 dark:text-white">
+                                テーマから学ぶ
+                            </h2>
+                        </div>
+                        <p className="hidden text-sm text-gray-500 dark:text-gray-400 sm:block">
+                            まずは気になるテーマから
+                        </p>
                     </div>
-                </div>
-            </main>
-        </div>
+
+                    <div className="grid gap-5 sm:grid-cols-2">
+                        {topics.map((topic, index) => (
+                            <Link
+                                key={topic.href}
+                                href={topic.href}
+                                className="group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:border-emerald-300 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-700 dark:border-gray-700 dark:bg-gray-800 dark:hover:border-emerald-600 dark:focus-visible:outline-emerald-400"
+                            >
+                                <div className="flex items-center justify-between">
+                                    <span className="text-sm font-medium text-emerald-700 dark:text-emerald-400">
+                                        {topic.category}
+                                    </span>
+                                    <span className="text-sm text-gray-400 dark:text-gray-500">
+                                        0{index + 1}
+                                    </span>
+                                </div>
+                                <h3 className="mt-8 text-3xl font-bold text-gray-900 group-hover:text-emerald-800 dark:text-white dark:group-hover:text-emerald-300">
+                                    {topic.title}
+                                </h3>
+                                <p className="mt-3 min-h-12 leading-7 text-gray-600 dark:text-gray-300">
+                                    {topic.description}
+                                </p>
+                                <span className="mt-6 inline-flex items-center gap-2 font-semibold text-emerald-700 dark:text-emerald-400">
+                                    学んでみる
+                                    <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
+                                </span>
+                            </Link>
+                        ))}
+                    </div>
+                </section>
+
+                <p className="mt-12 text-sm leading-6 text-gray-500 dark:text-gray-400">
+                    このサイトは金融知識の学習を目的としています。個別の金融商品や投資を勧めるものではありません。
+                </p>
+            </div>
+        </main>
     );
 }

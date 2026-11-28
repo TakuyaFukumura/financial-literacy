@@ -44,7 +44,7 @@ describe('Header', () => {
         it('ヘッダータイトルが表示される', () => {
             renderWithProvider();
 
-            expect(screen.getByText('financial-literacy')).toBeInTheDocument();
+            expect(screen.getByRole('link', {name: 'お金の学び場'})).toHaveAttribute('href', '/');
         });
 
         it('ヘッダーのHTML構造が正しい', () => {
