@@ -2,7 +2,7 @@ import {render, screen} from '@testing-library/react';
 import InflationPage from '../../../../../src/app/learn/inflation/page';
 
 describe('InflationPage', () => {
-    it('インフレと購買力の関係を図解し、影響やリスクを説明する', () => {
+    it('インフレの基本と購買力の関係を図解する', () => {
         render(<InflationPage/>);
 
         expect(screen.getByRole('heading', {name: 'インフレ'})).toBeInTheDocument();
@@ -13,9 +13,9 @@ describe('InflationPage', () => {
         expect(screen.getByText('4個')).toBeInTheDocument();
         expect(screen.getByText(/説明のための仮の例です/)).toBeInTheDocument();
         expect(screen.getByRole('heading', {name: '家計への影響は一様ではない'})).toBeInTheDocument();
-        expect(screen.getByRole('link', {name: '次に読む：為替'})).toHaveAttribute(
+        expect(screen.getByRole('link', {name: '次に読む：インフレリスク'})).toHaveAttribute(
             'href',
-            '/learn/exchange-rate'
+            '/learn/inflation-risk'
         );
     });
 });

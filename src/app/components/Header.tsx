@@ -43,6 +43,17 @@ export default function Header() {
 
                     <nav aria-label="メインナビゲーション" className="flex items-center gap-1 sm:gap-2">
                         <Link
+                            href="/risks-and-pitfalls"
+                            aria-label="リスクと落とし穴"
+                            className="rounded-lg px-2 py-2 text-xs font-medium text-gray-700
+                            hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2
+                            focus-visible:outline-emerald-700 dark:text-gray-300 dark:hover:bg-gray-700
+                            dark:focus-visible:outline-emerald-400 sm:px-3 sm:text-sm"
+                        >
+                            <span className="sm:hidden">落とし穴</span>
+                            <span className="hidden sm:inline">リスクと落とし穴</span>
+                        </Link>
+                        <Link
                             href="/asset-building-roadmap"
                             className="rounded-lg px-2 py-2 text-xs font-medium text-emerald-700
                             hover:bg-emerald-50 focus-visible:outline-2 focus-visible:outline-offset-2

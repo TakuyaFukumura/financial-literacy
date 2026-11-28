@@ -8,6 +8,9 @@ describe('ExchangeRatePage', () => {
         expect(screen.getByRole('heading', {name: '為替'})).toBeInTheDocument();
         expect(screen.getByText(/1米ドル＝150円/)).toBeInTheDocument();
         expect(screen.getByRole('heading', {name: '円高・円安が暮らしに与える影響'})).toBeInTheDocument();
-        expect(screen.getByRole('heading', {name: '外貨建て資産には為替変動の影響もある'})).toBeInTheDocument();
+        expect(screen.getByRole('link', {name: '次に読む：為替リスク'})).toHaveAttribute(
+            'href',
+            '/learn/exchange-rate-risk'
+        );
     });
 });
