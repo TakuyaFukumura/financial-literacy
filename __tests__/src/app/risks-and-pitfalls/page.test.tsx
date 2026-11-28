@@ -16,6 +16,10 @@ describe('RisksAndPitfallsPage', () => {
             'href',
             '/learn/ponzi-scheme'
         );
+        expect(within(pitfalls).getByRole('link', {name: /投資を装うマルチ商法（MLM）/})).toHaveAttribute(
+            'href',
+            '/learn/investment-mlm'
+        );
 
         const risks = screen.getByRole('region', {name: '資産形成で知っておきたいリスク'});
         expect(within(risks).getByRole('link', {name: /為替リスク/})).toHaveAttribute(
