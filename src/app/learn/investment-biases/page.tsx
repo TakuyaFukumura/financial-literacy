@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function InvestmentBiasesPage() {
     return (
         <LearningTopicPage
-            category="資産形成で知っておきたいリスク"
+            category="投資判断に影響する認知バイアス"
             title="投資判断に影響する認知バイアス"
             tags={['資産形成', '投資手法', 'リスク', '初心者']}
             introduction="認知バイアスとは、情報を受け取ったり判断したりするときに生じる、偏りやすい考え方のことです。投資では誰にでも起こり得ます。自分の判断が常に合理的だと思い込まず、どんなときに偏りやすいかを知って、確認の手順を持つことが役立ちます。"

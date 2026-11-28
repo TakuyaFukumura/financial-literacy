@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: 'リスクと落とし穴 | お金の学び場',
-    description: '投資トラブルや資産形成に関わるリスクを学び、確認したいポイントを知るための記事一覧です。',
+    description: '投資トラブル、資産形成のリスク、投資判断に影響する認知バイアスを学ぶ記事一覧です。',
 };
 
 const topics = [
@@ -75,6 +75,9 @@ const risks = [
         title: 'インフレリスク',
         description: '物価上昇によって預貯金や資産の実質的な価値が変化する影響を学びます。',
     },
+];
+
+const biases = [
     {
         href: '/learn/investment-biases',
         title: '投資判断に影響する認知バイアス',
@@ -129,7 +132,7 @@ export default function RisksAndPitfallsPage() {
                         リスクと落とし穴
                     </h1>
                     <p className="mt-5 text-lg leading-8 text-gray-600 dark:text-gray-300">
-                        投資トラブルを避けるための知識と、資産形成で理解しておきたいリスクを紹介します。
+                        投資トラブル、資産形成で知っておきたいリスク、投資判断に影響する認知バイアスを紹介します。
                         為替やインフレは避けるべきものではなく、影響を知って備えることが大切です。
                     </p>
                 </header>
@@ -146,6 +149,13 @@ export default function RisksAndPitfallsPage() {
                         資産形成で知っておきたいリスク
                     </h2>
                     <TopicList items={risks}/>
+                </section>
+
+                <section aria-labelledby="biases-heading" className="mt-12">
+                    <h2 id="biases-heading" className="mb-5 text-2xl font-bold text-gray-900 dark:text-white">
+                        投資判断に影響する認知バイアス
+                    </h2>
+                    <TopicList items={biases}/>
                 </section>
             </div>
         </main>

@@ -2,7 +2,7 @@ import {render, screen, within} from '@testing-library/react';
 import RisksAndPitfallsPage from '../../../../src/app/risks-and-pitfalls/page';
 
 describe('RisksAndPitfallsPage', () => {
-    it('注意点と一般的なリスクを分け、関連記事へ案内する', () => {
+    it('投資トラブル・リスク・認知バイアスを分けて記事へ案内する', () => {
         render(<RisksAndPitfallsPage/>);
 
         expect(screen.getByRole('heading', {name: 'リスクと落とし穴'})).toBeInTheDocument();
@@ -62,7 +62,8 @@ describe('RisksAndPitfallsPage', () => {
             'href',
             '/learn/inflation-risk'
         );
-        expect(within(risks).getByRole('link', {name: /投資判断に影響する認知バイアス/})).toHaveAttribute(
+        const biases = screen.getByRole('region', {name: '投資判断に影響する認知バイアス'});
+        expect(within(biases).getByRole('link', {name: /投資判断に影響する認知バイアス/})).toHaveAttribute(
             'href',
             '/learn/investment-biases'
         );

@@ -6,6 +6,7 @@ describe('InvestmentBiasesPage', () => {
         render(<InvestmentBiasesPage/>);
 
         expect(screen.getByRole('heading', {name: '投資判断に影響する認知バイアス'})).toBeInTheDocument();
+        expect(screen.getByText('投資判断に影響する認知バイアス', {selector: 'p'})).toBeInTheDocument();
         expect(screen.getByRole('heading', {name: '確証バイアス：自分の考えに合う情報ばかり集める'})).toBeInTheDocument();
         expect(screen.getByRole('heading', {name: 'アンカリング：買値や過去の高値に引きずられる'})).toBeInTheDocument();
         expect(screen.getByRole('heading', {name: '損失回避：損を確定したくなくて判断を先送りする'})).toBeInTheDocument();
