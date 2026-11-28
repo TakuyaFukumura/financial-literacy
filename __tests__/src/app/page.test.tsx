@@ -22,6 +22,7 @@ describe('Home', () => {
             'href',
             '/learn/inflation'
         );
+        expect(within(topics).queryByRole('link', {name: /インフレリスク/})).not.toBeInTheDocument();
         expect(within(topics).getByRole('link', {name: /金利/})).toHaveAttribute(
             'href',
             '/learn/interest-rate'
@@ -62,6 +63,8 @@ describe('Home', () => {
             'href',
             '/learn/exchange-rate'
         );
+        expect(within(topics).queryByRole('link', {name: /為替リスク/})).not.toBeInTheDocument();
+        expect(within(topics).queryByRole('link', {name: /リスクと落とし穴/})).not.toBeInTheDocument();
         expect(within(topics).getByRole('link', {name: /iDeCo/})).toHaveAttribute(
             'href',
             '/learn/ideco'

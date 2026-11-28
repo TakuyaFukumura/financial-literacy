@@ -20,11 +20,11 @@ describe('RisksAndPitfallsPage', () => {
         const risks = screen.getByRole('region', {name: '資産形成で知っておきたいリスク'});
         expect(within(risks).getByRole('link', {name: /為替リスク/})).toHaveAttribute(
             'href',
-            '/learn/exchange-rate'
+            '/learn/exchange-rate-risk'
         );
         expect(within(risks).getByRole('link', {name: /インフレリスク/})).toHaveAttribute(
             'href',
-            '/learn/inflation'
+            '/learn/inflation-risk'
         );
         expect(screen.getByText(/為替やインフレは避けるべきものではなく/)).toBeInTheDocument();
     });

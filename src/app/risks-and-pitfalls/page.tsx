@@ -21,14 +21,14 @@ const topics = [
 
 const risks = [
     {
-        href: '/learn/exchange-rate',
+        href: '/learn/exchange-rate-risk',
         title: '為替リスク',
-        description: '為替レートの変動が、外貨建て資産の円換算額や暮らしに与える影響を学びます。',
+        description: '為替レートの変動が外貨建て資産の円換算額に与える影響を学びます。',
     },
     {
-        href: '/learn/inflation',
+        href: '/learn/inflation-risk',
         title: 'インフレリスク',
-        description: '物価上昇によってお金の購買力が変化する仕組みと、家計への影響を学びます。',
+        description: '物価上昇によって預貯金や資産の実質的な価値が変化する影響を学びます。',
     },
 ];
 
