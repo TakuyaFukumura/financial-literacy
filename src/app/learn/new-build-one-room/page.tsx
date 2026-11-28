@@ -11,6 +11,8 @@ export default function NewBuildOneRoomPage() {
         <LearningTopicPage
             category="投資トラブル・商品の注意点"
             title="新築ワンルームマンション投資の注意点"
+            backHref="/risks-and-pitfalls"
+            backLabel="リスクと落とし穴へ戻る"
             tags={['投資商品', '投資トラブル', 'ローン', 'リスク']}
             introduction="新築ワンルームマンション投資は、家賃収入や将来の売却益を期待して物件を購入する投資です。利益が保証されるわけではなく、家賃や物件価格が変わる一方でローン返済や維持費は続きます。勧誘時の収支だけで判断せず、契約や融資の条件を確かめましょう。"
             sections={[

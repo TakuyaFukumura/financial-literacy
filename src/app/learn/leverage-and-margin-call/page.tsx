@@ -11,6 +11,8 @@ export default function LeverageAndMarginCallPage() {
         <LearningTopicPage
             category="投資の仕組みとリスク"
             title="レバレッジと追証"
+            backHref="/risks-and-pitfalls"
+            backLabel="リスクと落とし穴へ戻る"
             tags={['投資商品', '投資手法', 'リスク']}
             introduction="レバレッジを使うと、預けた証拠金より大きな金額の取引ができます。利益が大きくなる可能性がある一方、損失も拡大し、取引によっては追加の証拠金（追証）が必要になることがあります。"
             sections={[

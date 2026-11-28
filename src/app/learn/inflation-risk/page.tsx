@@ -11,6 +11,8 @@ export default function InflationRiskPage() {
         <LearningTopicPage
             category="資産形成で知っておきたいリスク"
             title="インフレリスク"
+            backHref="/risks-and-pitfalls"
+            backLabel="リスクと落とし穴へ戻る"
             tags={['インフレ', '物価', 'リスク']}
             introduction="物価が上がると、同じ金額で買える商品やサービスが少なくなることがあります。預貯金などの額面が変わらなくても、物価上昇によってお金の実質的な購買力が下がる可能性があることを、インフレリスクといいます。"
             sections={[

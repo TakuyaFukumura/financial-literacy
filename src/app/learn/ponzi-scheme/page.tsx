@@ -12,6 +12,8 @@ export default function PonziSchemePage() {
         <LearningTopicPage
             category="投資トラブルを防ぐ"
             title="ポンジスキーム"
+            backHref="/risks-and-pitfalls"
+            backLabel="リスクと落とし穴へ戻る"
             tags={['投資トラブル', '詐欺', 'リスク']}
             introduction="ポンジスキームは、運用益がほとんどない、または実態がないのに、新たな出資者から集めた資金を既存の出資者への配当に充て、利益が出ているように見せる詐欺の手口です。"
             sections={[

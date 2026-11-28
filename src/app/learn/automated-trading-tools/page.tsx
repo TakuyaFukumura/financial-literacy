@@ -11,6 +11,8 @@ export default function AutomatedTradingToolsPage() {
         <LearningTopicPage
             category="投資トラブル・商品の注意点"
             title="自動売買ツールの注意点"
+            backHref="/risks-and-pitfalls"
+            backLabel="リスクと落とし穴へ戻る"
             tags={['投資商品', '投資手法', '投資トラブル', 'リスク']}
             introduction="自動売買ツールは、あらかじめ決めた条件に沿って注文を出す仕組みです。ツールを使うこと自体が詐欺というわけではありませんが、相場の変動による損失を防いだり、利益を保証したりするものではありません。「設定するだけで必ず儲かる」といった勧誘は、仕組みや取引先を慎重に確かめましょう。"
             sections={[

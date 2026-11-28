@@ -11,6 +11,8 @@ export default function AnchoringBiasPage() {
         <LearningTopicPage
             category="投資判断に影響する認知バイアス"
             title="アンカリングと投資判断"
+            backHref="/risks-and-pitfalls"
+            backLabel="リスクと落とし穴へ戻る"
             tags={['資産形成', '投資手法', 'リスク']}
             introduction="アンカリングとは、最初に目にした数字や情報が基準として残り、その後の判断に影響する傾向です。投資では、買値や過去の高値、誰かが示した目標価格が、現在の価値を考える際の「ものさし」になってしまうことがあります。"
             sections={[

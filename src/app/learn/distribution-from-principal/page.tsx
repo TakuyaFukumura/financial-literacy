@@ -12,6 +12,8 @@ export default function DistributionFromPrincipalPage() {
         <LearningTopicPage
             category="投資信託の基礎"
             title="タコ足配当"
+            backHref="/risks-and-pitfalls"
+            backLabel="リスクと落とし穴へ戻る"
             tags={['投資信託', '分配金', 'リスク']}
             introduction="タコ足配当とは、利益だけでは賄えない配当や分配金を、蓄積した資本や元本から支払う状態を指す俗称です。受取額の大きさだけでは、投資の成果を判断できません。"
             sections={[

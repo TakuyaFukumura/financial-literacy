@@ -11,6 +11,8 @@ export default function ConfirmationBiasPage() {
         <LearningTopicPage
             category="投資判断に影響する認知バイアス"
             title="確証バイアスと投資判断"
+            backHref="/risks-and-pitfalls"
+            backLabel="リスクと落とし穴へ戻る"
             tags={['資産形成', '投資手法', 'リスク']}
             introduction="確証バイアスとは、自分がすでに信じている考えを支持する情報を集めたり重視したりし、反対の情報を見落としやすくなる傾向です。投資では、保有したい商品に都合のよい材料ばかり見て、判断を見直す機会を逃すことがあります。"
             sections={[

@@ -11,6 +11,8 @@ export default function LossAversionPage() {
         <LearningTopicPage
             category="投資判断に影響する認知バイアス"
             title="損失回避と投資判断"
+            backHref="/risks-and-pitfalls"
+            backLabel="リスクと落とし穴へ戻る"
             tags={['資産形成', '投資手法', 'リスク']}
             introduction="損失回避とは、同じ金額であっても利益を得る喜びより損失の痛みを強く感じやすい傾向です。損を確定したくない気持ちが、投資を続けるか見直すかの判断に影響することがあります。"
             sections={[

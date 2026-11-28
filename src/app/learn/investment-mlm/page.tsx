@@ -12,6 +12,8 @@ export default function InvestmentMlmPage() {
         <LearningTopicPage
             category="投資トラブルを防ぐ"
             title="投資を装うマルチ商法（MLM）"
+            backHref="/risks-and-pitfalls"
+            backLabel="リスクと落とし穴へ戻る"
             tags={['投資トラブル', 'リスク']}
             introduction="高い投資利益をうたって人を集めながら、実際には会員登録や商品購入、知人の紹介による報酬が中心となっている勧誘があります。MLM（連鎖販売取引）自体が直ちに違法というわけではありませんが、投資の実態と契約内容を分けて確かめることが大切です。"
             sections={[

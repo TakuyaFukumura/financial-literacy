@@ -36,6 +36,8 @@ export type LearningTag =
 type LearningTopicPageProps = {
     category: string;
     title: string;
+    backHref?: string;
+    backLabel?: string;
     tags: readonly LearningTag[];
     introduction: string;
     sections: {heading: string; body: string}[];
@@ -55,6 +57,8 @@ type LearningTopicPageProps = {
 export default function LearningTopicPage({
                                               category,
                                               title,
+                                              backHref = '/',
+                                              backLabel = 'テーマ一覧へ戻る',
                                               tags,
                                               introduction,
                                               sections,
@@ -71,10 +75,10 @@ export default function LearningTopicPage({
             <article className="mx-auto max-w-3xl">
                 <nav aria-label="ページナビゲーション" className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
                     <Link
-                        href="/"
+                        href={backHref}
                         className="text-emerald-700 hover:underline dark:text-emerald-400"
                     >
-                        ← テーマ一覧へ戻る
+                        ← {backLabel}
                     </Link>
                     {roadmapHref && (
                         <Link

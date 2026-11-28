@@ -11,6 +11,8 @@ export default function HerdBehaviorPage() {
         <LearningTopicPage
             category="投資判断に影響する認知バイアス"
             title="同調・群集心理と投資判断"
+            backHref="/risks-and-pitfalls"
+            backLabel="リスクと落とし穴へ戻る"
             tags={['資産形成', '投資手法', 'リスク']}
             introduction="同調・群集心理とは、周囲の人の行動や多数派の意見に、自分の判断が影響されることです。投資では、人気や話題性を「安全」や「値上がりの根拠」と思い込み、十分に調べないまま購入してしまうことがあります。"
             sections={[
