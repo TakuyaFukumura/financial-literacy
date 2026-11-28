@@ -35,19 +35,19 @@ export type LearningTag =
     | '初心者';
 
 type LearningTopicPageProps = {
-    category: string;
-    title: string;
-    backHref?: string;
-    backLabel?: string;
-    tags: readonly LearningTag[];
-    introduction: string;
-    sections: {id?: string; heading: string; body: string}[];
-    relatedTopic: {href: string; title: string};
-    relatedTopicLabel?: string;
-    references?: readonly {label: string; href: string}[];
-    contentReviewedOn?: string;
-    roadmapHref?: string;
-    roadmapProgress?:
+    readonly category: string;
+    readonly title: string;
+    readonly backHref?: string;
+    readonly backLabel?: string;
+    readonly tags: readonly LearningTag[];
+    readonly introduction: string;
+    readonly sections: {id?: string; heading: string; body: string}[];
+    readonly relatedTopic: {href: string; title: string};
+    readonly relatedTopicLabel?: string;
+    readonly references?: readonly {label: string; href: string}[];
+    readonly contentReviewedOn?: string;
+    readonly roadmapHref?: string;
+    readonly roadmapProgress?:
         | {
             step: number;
             totalSteps: number;
@@ -59,7 +59,7 @@ type LearningTopicPageProps = {
             totalSteps: number;
             completionMessage: string;
         };
-    children?: ReactNode;
+    readonly children?: ReactNode;
 };
 
 export default function LearningTopicPage({

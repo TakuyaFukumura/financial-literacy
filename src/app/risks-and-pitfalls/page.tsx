@@ -120,7 +120,7 @@ const biases = [
     },
 ];
 
-function TopicList({items}: {items: typeof topics}) {
+function TopicList({items}: {readonly items: typeof topics}) {
     return (
         <ul className="grid gap-4 sm:grid-cols-2">
             {items.map((item) => (
@@ -136,7 +136,7 @@ function TopicList({items}: {items: typeof topics}) {
                         <h3 className="text-xl font-bold text-gray-900 dark:text-white">{item.title}</h3>
                         <p className="mt-3 leading-7 text-gray-600 dark:text-gray-300">{item.description}</p>
                         <span className="mt-5 inline-flex items-center gap-2 font-semibold text-emerald-700 dark:text-emerald-400">
-                            記事を読む
+                            <span>記事を読む</span>
                             <span aria-hidden="true">→</span>
                         </span>
                     </Link>

@@ -153,7 +153,7 @@ export default function Home() {
                                     {topic.description}
                                 </p>
                                 <span className="mt-6 inline-flex items-center gap-2 font-semibold text-emerald-700 dark:text-emerald-400">
-                                    学んでみる
+                                    <span>学んでみる</span>
                                     <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
                                 </span>
                             </Link>

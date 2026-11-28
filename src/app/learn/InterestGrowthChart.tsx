@@ -2,8 +2,8 @@ const annualRate = 0.05;
 const plot = {left: 76, right: 690, top: 28, bottom: 312};
 
 type InterestGrowthChartProps = {
-    compareWithCompound?: boolean;
-    principal?: number;
+    readonly compareWithCompound?: boolean;
+    readonly principal?: number;
 };
 
 function xForYear(year: number, durationYears: number) {
@@ -148,13 +148,13 @@ export default function InterestGrowthChart({
             </svg>
             <div className="mt-2 flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-700 dark:text-gray-300">
                 <span className="inline-flex items-center gap-2">
-                    <span aria-hidden="true" className="h-1 w-5 rounded bg-emerald-600 dark:bg-emerald-400"/>
-                    単利
+                    <span aria-hidden="true" className="h-1 w-5 rounded bg-emerald-600 dark:bg-emerald-400" />
+                    <span>単利</span>
                 </span>
                 {compareWithCompound && (
                     <span className="inline-flex items-center gap-2">
-                        <span aria-hidden="true" className="h-1 w-5 rounded bg-blue-600 dark:bg-blue-400"/>
-                        複利（利息を再投資）
+                        <span aria-hidden="true" className="h-1 w-5 rounded bg-blue-600 dark:bg-blue-400" />
+                        <span>複利（利息を再投資）</span>
                     </span>
                 )}
             </div>
