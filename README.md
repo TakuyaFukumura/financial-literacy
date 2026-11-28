@@ -9,7 +9,6 @@ Next.jsを使った金融リテラシー学習サイトです。
 - **React 19.2.8** - ユーザーインターフェース構築
 - **TypeScript** - 型安全性
 - **Tailwind CSS 4** - スタイリング
-- **SQLite** - データベース（better-sqlite3）
 - **ESLint** - コード品質管理
 
 ## 機能
@@ -109,13 +108,8 @@ pnpm start
 ## プロジェクト構造
 
 ```
-├── lib/
-│   └── database.ts          # SQLiteデータベース接続・操作
 ├── src/
 │   └── app/
-│       ├── api/
-│       │   └── message/
-│       │       └── route.ts # APIエンドポイント
 │       ├── learn/
 │       │   ├── compound-interest/page.tsx # 複利の解説
 │       │   └── nisa/page.tsx              # NISAの解説
@@ -125,45 +119,12 @@ pnpm start
 │       ├── globals.css      # グローバルスタイル
 │       ├── layout.tsx       # アプリケーションレイアウト
 │       └── page.tsx         # メインページコンポーネント
-├── data/                    # SQLiteデータベースファイル（自動生成）
 ├── package.json
 ├── next.config.ts
-├── tailwind.config.ts
 └── tsconfig.json
 ```
 
-## API エンドポイント
-
-### GET /api/message
-
-データベースから最新のメッセージを取得します。
-
-**レスポンス:**
-
-```json
-{
-  "message": "Hello, world."
-}
-```
-
-## データベース
-
-SQLiteデータベースは初回起動時に自動的に作成されます：
-
-- データベースファイル: `data/app.db`
-- テーブル: `messages`
-    - `id`: 自動増分プライマリーキー
-    - `content`: メッセージ内容
-    - `created_at`: 作成日時
-
-## カスタマイズ
-
-### メッセージの変更
-
-データベース内のメッセージを変更したい場合は、
-SQLiteクライアントを使用して `data/app.db` ファイル内の `messages` テーブルを編集してください。
-
-### スタイルの変更
+## スタイルの変更
 
 スタイルは Tailwind CSS を使用しています。
 `src/app/page.tsx` ファイル内のクラス名を変更することで、外観をカスタマイズできます。
@@ -206,13 +167,12 @@ npm run test:coverage
 
 #### テストファイルの構成
 
-- `__tests__/lib/database.test.ts`: データベース機能のテスト
+- `__tests__/src/app/page.test.tsx`: トップページのテスト
 - `__tests__/src/app/components/DarkModeProvider.test.tsx`: ダークモードProvider のテスト
 - `__tests__/src/app/components/Header.test.tsx`: ヘッダーコンポーネントのテスト
 
 #### テストの特徴
 
-- **データベーステスト**: SQLiteを使用した実際のデータベース操作のテスト
 - **Reactコンポーネントテスト**: React Testing Library を使用したコンポーネントのレンダリングとインタラクションのテスト
 - **モッキング**: localStorage や外部依存関係のモック
 - **カバレッジ**: コードカバレッジの測定と報告
@@ -268,11 +228,6 @@ CIでは以下のチェックが行われます：
 - 詳細な設定は `.github/dependabot.yml` を参照してください。
 
 ## トラブルシューティング
-
-### データベース関連のエラー
-
-- `data/` フォルダが存在しない場合、自動的に作成されます
-- データベースファイルが破損した場合は、`data/app.db` を削除して再起動してください
 
 ### ポート競合
 
