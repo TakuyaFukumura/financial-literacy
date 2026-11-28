@@ -62,6 +62,10 @@ describe('RisksAndPitfallsPage', () => {
             'href',
             '/learn/inflation-risk'
         );
+        expect(within(risks).getByRole('link', {name: /投資判断に影響する認知バイアス/})).toHaveAttribute(
+            'href',
+            '/learn/investment-biases'
+        );
         expect(screen.getByText(/為替やインフレは避けるべきものではなく/)).toBeInTheDocument();
     });
 });

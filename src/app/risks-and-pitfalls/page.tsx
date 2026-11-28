@@ -75,6 +75,11 @@ const risks = [
         title: 'インフレリスク',
         description: '物価上昇によって預貯金や資産の実質的な価値が変化する影響を学びます。',
     },
+    {
+        href: '/learn/investment-biases',
+        title: '投資判断に影響する認知バイアス',
+        description: '確証バイアスや損失回避など、投資判断に影響する考え方と対策を学びます。',
+    },
 ];
 
 function TopicList({items}: {items: typeof topics}) {
