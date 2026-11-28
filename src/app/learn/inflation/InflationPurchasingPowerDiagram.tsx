@@ -26,7 +26,8 @@ export default function InflationPurchasingPowerDiagram() {
                         ))}
                     </div>
                 </div>
-                <div className="rounded-xl border border-amber-200 bg-amber-50 p-5 dark:border-amber-900 dark:bg-amber-950/40">
+                <div
+                    className="rounded-xl border border-amber-200 bg-amber-50 p-5 dark:border-amber-900 dark:bg-amber-950/40">
                     <h3 className="font-bold text-amber-900 dark:text-amber-200">物価上昇後</h3>
                     <p className="mt-3 text-sm text-gray-700 dark:text-gray-300">1個 250円</p>
                     <div className="mt-3 flex items-center justify-between gap-3">

@@ -15,7 +15,8 @@ export default function DistributionFromPrincipalDiagram() {
             </p>
 
             <div className="mt-5 grid gap-4 md:grid-cols-2">
-                <section className="rounded-xl border border-sky-200 bg-sky-50 p-5 dark:border-sky-900 dark:bg-sky-950/40">
+                <section
+                    className="rounded-xl border border-sky-200 bg-sky-50 p-5 dark:border-sky-900 dark:bg-sky-950/40">
                     <h3 className="font-bold text-sky-950 dark:text-sky-100">運用益500円から分配する例</h3>
                     <p className="mt-3 text-sm text-gray-700 dark:text-gray-300">分配前の評価額：10,500円</p>
                     <p className="mt-1 text-sm text-gray-700 dark:text-gray-300">分配金：500円</p>
@@ -24,7 +25,8 @@ export default function DistributionFromPrincipalDiagram() {
                     </p>
                 </section>
 
-                <section className="rounded-xl border border-amber-200 bg-amber-50 p-5 dark:border-amber-900 dark:bg-amber-950/40">
+                <section
+                    className="rounded-xl border border-amber-200 bg-amber-50 p-5 dark:border-amber-900 dark:bg-amber-950/40">
                     <h3 className="font-bold text-amber-950 dark:text-amber-100">運用益がないのに500円分配する例</h3>
                     <p className="mt-3 text-sm text-gray-700 dark:text-gray-300">分配前の評価額：10,000円</p>
                     <p className="mt-1 text-sm text-gray-700 dark:text-gray-300">分配金：500円</p>

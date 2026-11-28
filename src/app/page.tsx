@@ -101,13 +101,15 @@ const topics = [
 
 export default function Home() {
     return (
-        <main className="min-h-[calc(100vh-4rem)] bg-gradient-to-b from-amber-50 to-white px-4 py-16 dark:from-gray-900 dark:to-gray-950 sm:px-6 sm:py-24">
+        <main
+            className="min-h-[calc(100vh-4rem)] bg-gradient-to-b from-amber-50 to-white px-4 py-16 dark:from-gray-900 dark:to-gray-950 sm:px-6 sm:py-24">
             <div className="mx-auto max-w-5xl">
                 <section aria-labelledby="welcome-heading" className="mb-16 max-w-3xl">
                     <p className="mb-4 text-sm font-semibold tracking-widest text-emerald-700 dark:text-emerald-400">
                         金融リテラシー入門
                     </p>
-                    <h1 id="welcome-heading" className="text-4xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white sm:text-6xl">
+                    <h1 id="welcome-heading"
+                        className="text-4xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white sm:text-6xl">
                         お金のことを、
                         <br/>
                         基礎から学ぼう。
@@ -152,9 +154,11 @@ export default function Home() {
                                 <p className="mt-3 min-h-12 leading-7 text-gray-600 dark:text-gray-300">
                                     {topic.description}
                                 </p>
-                                <span className="mt-6 inline-flex items-center gap-2 font-semibold text-emerald-700 dark:text-emerald-400">
+                                <span
+                                    className="mt-6 inline-flex items-center gap-2 font-semibold text-emerald-700 dark:text-emerald-400">
                                     <span>学んでみる</span>
-                                    <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
+                                    <span aria-hidden="true"
+                                          className="transition-transform group-hover:translate-x-1">→</span>
                                 </span>
                             </Link>
                         ))}

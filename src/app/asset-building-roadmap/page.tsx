@@ -15,9 +15,9 @@ type RoadmapStop = {
     side: 'left' | 'right';
     href?: string;
     linkLabel?: string;
-    followupLink?: {href: string; label: string};
+    followupLink?: { href: string; label: string };
     checklist?: readonly string[];
-    optionalLink?: {href: string; label: string};
+    optionalLink?: { href: string; label: string };
 };
 
 const roadmapStops: readonly RoadmapStop[] = [
@@ -116,7 +116,7 @@ const roadmapStops: readonly RoadmapStop[] = [
     },
 ];
 
-function RoadmapStopCard({stop}: {readonly stop: RoadmapStop}) {
+function RoadmapStopCard({stop}: { readonly stop: RoadmapStop }) {
     return (
         <div
             className={`relative z-10 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm
@@ -144,7 +144,8 @@ function RoadmapStopCard({stop}: {readonly stop: RoadmapStop}) {
                 <ul aria-label="確認項目" className="mt-4 space-y-3">
                     {stop.checklist.map((item) => (
                         <li key={item} className="flex gap-3 text-sm leading-6 text-gray-700 dark:text-gray-300">
-                            <span aria-hidden="true" className="font-bold text-emerald-700 dark:text-emerald-400">□</span>
+                            <span aria-hidden="true"
+                                  className="font-bold text-emerald-700 dark:text-emerald-400">□</span>
                             <span>{item}</span>
                         </li>
                     ))}
@@ -198,7 +199,8 @@ function RoadmapStopCard({stop}: {readonly stop: RoadmapStop}) {
 
 export default function AssetBuildingRoadmapPage() {
     return (
-        <main className="min-h-[calc(100vh-4rem)] bg-gradient-to-b from-amber-50 to-white px-4 py-12 dark:from-gray-900 dark:to-gray-950 sm:px-6 sm:py-16">
+        <main
+            className="min-h-[calc(100vh-4rem)] bg-gradient-to-b from-amber-50 to-white px-4 py-12 dark:from-gray-900 dark:to-gray-950 sm:px-6 sm:py-16">
             <div className="mx-auto max-w-5xl">
                 <Link
                     href="/"
@@ -333,7 +335,8 @@ export default function AssetBuildingRoadmapPage() {
                     className="mt-10 rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-700 dark:bg-gray-800 sm:p-7"
                 >
                     <p className="text-sm font-semibold text-emerald-700 dark:text-emerald-400">任意の行動</p>
-                    <h2 id="optional-next-action-heading" className="mt-2 text-xl font-bold text-gray-900 dark:text-white">
+                    <h2 id="optional-next-action-heading"
+                        className="mt-2 text-xl font-bold text-gray-900 dark:text-white">
                         主ルートの後：証券口座の開設を検討する
                     </h2>
                     <p className="mt-3 leading-7 text-gray-600 dark:text-gray-300">

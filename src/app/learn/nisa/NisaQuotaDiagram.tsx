@@ -16,7 +16,8 @@ export default function NisaQuotaDiagram() {
                         長期・積立・分散投資に適した一定の商品が対象
                     </p>
                 </div>
-                <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-5 dark:border-emerald-900 dark:bg-emerald-950/40">
+                <div
+                    className="rounded-xl border border-emerald-200 bg-emerald-50 p-5 dark:border-emerald-900 dark:bg-emerald-950/40">
                     <h3 className="font-bold text-emerald-900 dark:text-emerald-200">成長投資枠</h3>
                     <p className="mt-3 text-2xl font-bold text-gray-900 dark:text-white">年間240万円</p>
                     <p className="mt-2 text-sm leading-6 text-gray-700 dark:text-gray-300">

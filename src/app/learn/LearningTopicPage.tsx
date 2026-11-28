@@ -41,24 +41,24 @@ type LearningTopicPageProps = {
     readonly backLabel?: string;
     readonly tags: readonly LearningTag[];
     readonly introduction: string;
-    readonly sections: {id?: string; heading: string; body: string}[];
-    readonly relatedTopic: {href: string; title: string};
+    readonly sections: { id?: string; heading: string; body: string }[];
+    readonly relatedTopic: { href: string; title: string };
     readonly relatedTopicLabel?: string;
-    readonly references?: readonly {label: string; href: string}[];
+    readonly references?: readonly { label: string; href: string }[];
     readonly contentReviewedOn?: string;
     readonly roadmapHref?: string;
     readonly roadmapProgress?:
         | {
-            step: number;
-            totalSteps: number;
-            nextHref: string;
-            nextTitle: string;
-        }
+        step: number;
+        totalSteps: number;
+        nextHref: string;
+        nextTitle: string;
+    }
         | {
-            step: number;
-            totalSteps: number;
-            completionMessage: string;
-        };
+        step: number;
+        totalSteps: number;
+        completionMessage: string;
+    };
     readonly children?: ReactNode;
 };
 
@@ -79,7 +79,8 @@ export default function LearningTopicPage({
                                               children,
                                           }: LearningTopicPageProps) {
     return (
-        <main className="min-h-[calc(100vh-4rem)] bg-gradient-to-b from-amber-50 to-white px-4 py-12 dark:from-gray-900 dark:to-gray-950 sm:px-6 sm:py-20">
+        <main
+            className="min-h-[calc(100vh-4rem)] bg-gradient-to-b from-amber-50 to-white px-4 py-12 dark:from-gray-900 dark:to-gray-950 sm:px-6 sm:py-20">
             <article className="mx-auto max-w-3xl">
                 <nav aria-label="ページナビゲーション" className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
                     <Link

@@ -35,9 +35,9 @@ function formatYen(amount: number) {
 }
 
 export default function InterestGrowthChart({
-    compareWithCompound = false,
-    principal = 100_000,
-}: InterestGrowthChartProps) {
+                                                compareWithCompound = false,
+                                                principal = 100_000,
+                                            }: InterestGrowthChartProps) {
     const title = compareWithCompound ? '単利と複利の残高推移' : '単利の残高推移';
     const durationYears = compareWithCompound ? 40 : 20;
     const maxBalance = compareWithCompound ? principal * 7.5 : principal * 2.9;
@@ -47,7 +47,8 @@ export default function InterestGrowthChart({
     const xTicks = compareWithCompound ? [0, 10, 20, 30, 40] : [0, 5, 10, 15, 20];
 
     return (
-        <figure className="my-8 rounded-2xl border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-800 sm:p-6">
+        <figure
+            className="my-8 rounded-2xl border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-800 sm:p-6">
             <h2 className="text-xl font-bold text-gray-900 dark:text-white">
                 {title}
             </h2>
@@ -148,12 +149,12 @@ export default function InterestGrowthChart({
             </svg>
             <div className="mt-2 flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-700 dark:text-gray-300">
                 <span className="inline-flex items-center gap-2">
-                    <span aria-hidden="true" className="h-1 w-5 rounded bg-emerald-600 dark:bg-emerald-400" />
+                    <span aria-hidden="true" className="h-1 w-5 rounded bg-emerald-600 dark:bg-emerald-400"/>
                     <span>単利</span>
                 </span>
                 {compareWithCompound && (
                     <span className="inline-flex items-center gap-2">
-                        <span aria-hidden="true" className="h-1 w-5 rounded bg-blue-600 dark:bg-blue-400" />
+                        <span aria-hidden="true" className="h-1 w-5 rounded bg-blue-600 dark:bg-blue-400"/>
                         <span>複利（利息を再投資）</span>
                     </span>
                 )}
