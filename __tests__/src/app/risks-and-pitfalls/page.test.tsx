@@ -12,12 +12,40 @@ describe('RisksAndPitfallsPage', () => {
             'href',
             '/learn/distribution-from-principal'
         );
-        expect(within(pitfalls).getByRole('link', {name: /ポンジスキーム/})).toHaveAttribute(
+        expect(within(pitfalls).getByRole('link', {name: /^ポンジスキーム/})).toHaveAttribute(
             'href',
             '/learn/ponzi-scheme'
         );
+        expect(within(pitfalls).getByRole('link', {name: /投資を装うマルチ商法（MLM）/})).toHaveAttribute(
+            'href',
+            '/learn/investment-mlm'
+        );
+        expect(within(pitfalls).getByRole('link', {name: /ねずみ講（無限連鎖講）/})).toHaveAttribute(
+            'href',
+            '/learn/pyramid-scheme'
+        );
+        expect(within(pitfalls).getByRole('link', {name: /バイナリーオプション/})).toHaveAttribute(
+            'href',
+            '/learn/binary-options'
+        );
+        expect(within(pitfalls).getByRole('link', {name: /私募ファンドの注意点/})).toHaveAttribute(
+            'href',
+            '/learn/private-funds'
+        );
 
         const risks = screen.getByRole('region', {name: '資産形成で知っておきたいリスク'});
+        expect(within(risks).getByRole('link', {name: /減配リスク/})).toHaveAttribute(
+            'href',
+            '/learn/dividend-cut-risk'
+        );
+        expect(within(risks).getByRole('link', {name: /価格変動リスク/})).toHaveAttribute(
+            'href',
+            '/learn/price-volatility-risk'
+        );
+        expect(within(risks).getByRole('link', {name: /レバレッジと追証/})).toHaveAttribute(
+            'href',
+            '/learn/leverage-and-margin-call'
+        );
         expect(within(risks).getByRole('link', {name: /為替リスク/})).toHaveAttribute(
             'href',
             '/learn/exchange-rate-risk'

@@ -1,5 +1,6 @@
 import type {Metadata} from 'next';
 import LearningTopicPage from '../LearningTopicPage';
+import PonziSchemeDiagram from './PonziSchemeDiagram';
 
 export const metadata: Metadata = {
     title: 'ポンジスキームの仕組みと対策 | お金の学び場',
@@ -28,6 +29,8 @@ export default function PonziSchemePage() {
                 },
             ]}
             relatedTopic={{href: '/learn/distribution-from-principal', title: 'タコ足配当'}}
-        />
+        >
+            <PonziSchemeDiagram/>
+        </LearningTopicPage>
     );
 }

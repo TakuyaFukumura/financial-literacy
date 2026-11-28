@@ -17,9 +17,44 @@ const topics = [
         title: 'ポンジスキーム',
         description: '詐欺の仕組みや勧誘で注意したいサイン、勧誘を受けたときの対応を学びます。',
     },
+    {
+        href: '/learn/investment-mlm',
+        title: '投資を装うマルチ商法（MLM）',
+        description: '投資をうたう勧誘で、連鎖販売取引の仕組みや契約内容を確認するポイントを学びます。',
+    },
+    {
+        href: '/learn/pyramid-scheme',
+        title: 'ねずみ講（無限連鎖講）',
+        description: 'ねずみ講の仕組みや、MLM・ポンジスキームとの違い、勧誘を受けたときの対応を学びます。',
+    },
+    {
+        href: '/learn/binary-options',
+        title: 'バイナリーオプション',
+        description: '損益の仕組みや損益分岐に必要な勝率、繰り返し取引や業者選びの注意点を学びます。',
+    },
+    {
+        href: '/learn/private-funds',
+        title: '私募ファンドの注意点',
+        description: '私募の仕組みや、運用実態・換金条件・事業者の登録状況を確認するポイントを学びます。',
+    },
 ];
 
 const risks = [
+    {
+        href: '/learn/dividend-cut-risk',
+        title: '減配リスク',
+        description: '減配や無配が起きる理由や、高い配当利回りだけで判断しないための確認点を学びます。',
+    },
+    {
+        href: '/learn/price-volatility-risk',
+        title: '価格変動リスク',
+        description: '価格変動で資産評価額が変わる仕組みを、リーマン・ショック時の日経平均を例に学びます。',
+    },
+    {
+        href: '/learn/leverage-and-margin-call',
+        title: 'レバレッジと追証',
+        description: 'レバレッジで損益が拡大する仕組みや、追証の条件・取引前の確認点を学びます。',
+    },
     {
         href: '/learn/exchange-rate-risk',
         title: '為替リスク',
