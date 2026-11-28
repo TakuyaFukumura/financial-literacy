@@ -32,6 +32,11 @@ const topics = [
         title: 'バイナリーオプション',
         description: '損益の仕組みや損益分岐に必要な勝率、繰り返し取引や業者選びの注意点を学びます。',
     },
+    {
+        href: '/learn/private-funds',
+        title: '私募ファンドの注意点',
+        description: '私募の仕組みや、運用実態・換金条件・事業者の登録状況を確認するポイントを学びます。',
+    },
 ];
 
 const risks = [
