@@ -39,10 +39,7 @@ describe('Home', () => {
             'href',
             '/learn/nisa'
         );
-        expect(within(topics).getByRole('link', {name: /タコ足配当/})).toHaveAttribute(
-            'href',
-            '/learn/distribution-from-principal'
-        );
+        expect(within(topics).queryByRole('link', {name: /タコ足配当/})).not.toBeInTheDocument();
         expect(within(topics).getByRole('link', {name: /インデックス投資/})).toHaveAttribute(
             'href',
             '/learn/index-investing'

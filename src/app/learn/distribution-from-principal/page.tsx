@@ -1,5 +1,6 @@
 import type {Metadata} from 'next';
 import LearningTopicPage from '../LearningTopicPage';
+import DistributionFromPrincipalDiagram from './DistributionFromPrincipalDiagram';
 
 export const metadata: Metadata = {
     title: 'タコ足配当の見方 | お金の学び場',
@@ -32,6 +33,8 @@ export default function DistributionFromPrincipalPage() {
                 },
             ]}
             relatedTopic={{href: '/learn/nisa', title: 'NISA'}}
-        />
+        >
+            <DistributionFromPrincipalDiagram/>
+        </LearningTopicPage>
     );
 }

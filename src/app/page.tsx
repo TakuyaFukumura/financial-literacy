@@ -50,12 +50,6 @@ const topics = [
         description: '投資の利益が非課税になる制度の基本を学びます。',
     },
     {
-        href: '/learn/distribution-from-principal',
-        category: '投資信託の基礎',
-        title: 'タコ足配当',
-        description: '分配金の原資と、運用成果の見方を学びます。',
-    },
-    {
         href: '/learn/index-investing',
         category: '投資信託の基礎',
         title: 'インデックス投資',
