@@ -42,6 +42,11 @@ const topics = [
         title: '新築ワンルームマンション投資の注意点',
         description: '収支やサブリース、売却価格、ローンの条件など、契約前に確認したいポイントを学びます。',
     },
+    {
+        href: '/learn/automated-trading-tools',
+        title: '自動売買ツールの注意点',
+        description: '利益を保証する勧誘や、取引業者・契約条件を確認するポイントを学びます。',
+    },
 ];
 
 const risks = [

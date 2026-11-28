@@ -36,6 +36,10 @@ describe('RisksAndPitfallsPage', () => {
             'href',
             '/learn/new-build-one-room'
         );
+        expect(within(pitfalls).getByRole('link', {name: /自動売買ツールの注意点/})).toHaveAttribute(
+            'href',
+            '/learn/automated-trading-tools'
+        );
 
         const risks = screen.getByRole('region', {name: '資産形成で知っておきたいリスク'});
         expect(within(risks).getByRole('link', {name: /減配リスク/})).toHaveAttribute(
