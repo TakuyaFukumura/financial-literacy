@@ -24,6 +24,10 @@ describe('RisksAndPitfallsPage', () => {
             'href',
             '/learn/pyramid-scheme'
         );
+        expect(within(pitfalls).getByRole('link', {name: /バイナリーオプション/})).toHaveAttribute(
+            'href',
+            '/learn/binary-options'
+        );
 
         const risks = screen.getByRole('region', {name: '資産形成で知っておきたいリスク'});
         expect(within(risks).getByRole('link', {name: /価格変動リスク/})).toHaveAttribute(

@@ -27,6 +27,11 @@ const topics = [
         title: 'ねずみ講（無限連鎖講）',
         description: 'ねずみ講の仕組みや、MLM・ポンジスキームとの違い、勧誘を受けたときの対応を学びます。',
     },
+    {
+        href: '/learn/binary-options',
+        title: 'バイナリーオプション',
+        description: '損益の仕組みや損益分岐に必要な勝率、繰り返し取引や業者選びの注意点を学びます。',
+    },
 ];
 
 const risks = [
