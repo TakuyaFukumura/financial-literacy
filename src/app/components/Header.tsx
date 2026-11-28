@@ -41,7 +41,16 @@ export default function Header() {
                         お金の学び場
                     </Link>
 
-                    <div className="flex items-center">
+                    <nav aria-label="メインナビゲーション" className="flex items-center gap-1 sm:gap-2">
+                        <Link
+                            href="/asset-building-roadmap"
+                            className="rounded-lg px-2 py-2 text-xs font-medium text-emerald-700
+                            hover:bg-emerald-50 focus-visible:outline-2 focus-visible:outline-offset-2
+                            focus-visible:outline-emerald-700 dark:text-emerald-300 dark:hover:bg-gray-700
+                            dark:focus-visible:outline-emerald-400 sm:px-3 sm:text-sm"
+                        >
+                            ロードマップを見る
+                        </Link>
                         <button
                             onClick={handleThemeToggle}
                             className="flex items-center gap-2 px-3 py-2 text-sm font-medium
@@ -51,7 +60,7 @@ export default function Header() {
                         >
                             <span className="text-lg">{getThemeIcon()}</span>
                         </button>
-                    </div>
+                    </nav>
                 </div>
             </div>
         </header>

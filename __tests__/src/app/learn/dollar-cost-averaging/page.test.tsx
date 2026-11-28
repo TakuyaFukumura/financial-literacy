@@ -8,6 +8,10 @@ describe('DollarCostAveragingPage', () => {
         expect(screen.getByRole('heading', {name: 'ドル・コスト平均法'})).toBeInTheDocument();
         expect(screen.getByText(/価格が1,000円なら10口、500円なら20口/)).toBeInTheDocument();
         expect(screen.getByText(/利益が出ることを保証する方法でもありません/)).toBeInTheDocument();
+        expect(screen.getByRole('link', {name: '← 資産形成ロードマップへ戻る'})).toHaveAttribute(
+            'href',
+            '/asset-building-roadmap'
+        );
         expect(screen.getByRole('link', {name: '次に読む：インデックス投資'})).toHaveAttribute(
             'href',
             '/learn/index-investing'

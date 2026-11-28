@@ -30,7 +30,8 @@ export type LearningTag =
     | '預金'
     | 'ローン'
     | '資本'
-    | '格差';
+    | '格差'
+    | '初心者';
 
 type LearningTopicPageProps = {
     category: string;
@@ -39,6 +40,15 @@ type LearningTopicPageProps = {
     introduction: string;
     sections: {heading: string; body: string}[];
     relatedTopic: {href: string; title: string};
+    relatedTopicLabel?: string;
+    references?: readonly {label: string; href: string}[];
+    contentReviewedOn?: string;
+    roadmapHref?: string;
+    roadmapProgress?: {
+        step: number;
+        nextHref: string;
+        nextTitle: string;
+    };
     children?: ReactNode;
 };
 
@@ -49,17 +59,32 @@ export default function LearningTopicPage({
                                               introduction,
                                               sections,
                                               relatedTopic,
+                                              relatedTopicLabel = '次に読む',
+                                              references = [],
+                                              contentReviewedOn,
+                                              roadmapHref,
+                                              roadmapProgress,
                                               children,
                                           }: LearningTopicPageProps) {
     return (
         <main className="min-h-[calc(100vh-4rem)] bg-gradient-to-b from-amber-50 to-white px-4 py-12 dark:from-gray-900 dark:to-gray-950 sm:px-6 sm:py-20">
             <article className="mx-auto max-w-3xl">
-                <Link
-                    href="/"
-                    className="text-sm font-semibold text-emerald-700 hover:underline dark:text-emerald-400"
-                >
-                    ← テーマ一覧へ戻る
-                </Link>
+                <nav aria-label="ページナビゲーション" className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
+                    <Link
+                        href="/"
+                        className="text-emerald-700 hover:underline dark:text-emerald-400"
+                    >
+                        ← テーマ一覧へ戻る
+                    </Link>
+                    {roadmapHref && (
+                        <Link
+                            href={roadmapHref}
+                            className="text-emerald-700 hover:underline dark:text-emerald-400"
+                        >
+                            ← 資産形成ロードマップへ戻る
+                        </Link>
+                    )}
+                </nav>
                 <header className="mt-10 border-b border-gray-200 pb-8 dark:border-gray-700">
                     <p className="text-sm font-semibold tracking-wide text-emerald-700 dark:text-emerald-400">
                         {category}
@@ -97,11 +122,66 @@ export default function LearningTopicPage({
                     ))}
                 </div>
 
+                {(references.length > 0 || contentReviewedOn) && (
+                    <aside
+                        aria-labelledby="references-heading"
+                        className="mt-8 rounded-xl border border-gray-200 bg-white p-5 dark:border-gray-700 dark:bg-gray-800"
+                    >
+                        <h2 id="references-heading" className="text-lg font-bold text-gray-900 dark:text-white">
+                            参考情報
+                        </h2>
+                        {contentReviewedOn && (
+                            <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                                最終確認日：{contentReviewedOn}
+                            </p>
+                        )}
+                        {references.length > 0 && (
+                            <ul className="mt-3 list-inside list-disc space-y-1">
+                                {references.map((reference) => (
+                                    <li key={reference.href}>
+                                        <a
+                                            href={reference.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-sm font-medium text-emerald-700 underline
+                                            underline-offset-2 hover:text-emerald-900 focus-visible:outline-2
+                                            focus-visible:outline-offset-2 focus-visible:outline-emerald-700
+                                            dark:text-emerald-400 dark:hover:text-emerald-300
+                                            dark:focus-visible:outline-emerald-400"
+                                        >
+                                            {reference.label}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+                    </aside>
+                )}
+
+                {roadmapProgress && (
+                    <Link
+                        href={roadmapProgress.nextHref}
+                        className="mt-8 flex items-center justify-between rounded-xl border border-emerald-200
+                        bg-emerald-50 p-5 font-semibold text-gray-900 transition hover:border-emerald-400
+                        focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-700
+                        dark:border-emerald-900 dark:bg-emerald-950/40 dark:text-white
+                        dark:hover:border-emerald-600 dark:focus-visible:outline-emerald-400"
+                    >
+                        <span>
+                            <span className="block text-sm font-medium text-emerald-800 dark:text-emerald-300">
+                                資産形成ロードマップ {roadmapProgress.step} / 5
+                            </span>
+                            <span className="mt-1 block">次の地点：{roadmapProgress.nextTitle}</span>
+                        </span>
+                        <span aria-hidden="true" className="text-emerald-700 dark:text-emerald-400">→</span>
+                    </Link>
+                )}
+
                 <Link
                     href={relatedTopic.href}
                     className="mt-4 flex items-center justify-between rounded-xl border border-gray-200 bg-white p-5 font-semibold text-gray-900 transition hover:border-emerald-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:hover:border-emerald-600"
                 >
-                    <span>次に読む：{relatedTopic.title}</span>
+                    <span>{relatedTopicLabel}：{relatedTopic.title}</span>
                     <span aria-hidden="true" className="text-emerald-700 dark:text-emerald-400">→</span>
                 </Link>
             </article>

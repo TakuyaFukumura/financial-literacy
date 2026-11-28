@@ -11,7 +11,7 @@ export default function LongTermInstallmentDiversifiedPage() {
         <LearningTopicPage
             category="資産形成の基本"
             title="長期・積立・分散投資"
-            tags={['資産形成', '投資手法', '長期', '積立', '分散', 'リスク']}
+            tags={['初心者', '資産形成', '投資手法', '長期', '積立', '分散', 'リスク']}
             introduction="長期・積立・分散投資は、投資の期間や購入方法、投資先を考えるときの基本的な視点です。組み合わせることで価格変動の影響を抑えやすくなる場合がありますが、損失を防いだり利益を保証したりするものではありません。"
             sections={[
                 {
@@ -32,6 +32,20 @@ export default function LongTermInstallmentDiversifiedPage() {
                 },
             ]}
             relatedTopic={{href: '/learn/dollar-cost-averaging', title: 'ドル・コスト平均法'}}
+            relatedTopicLabel="任意の補足"
+            references={[
+                {
+                    label: '金融庁「NISA早わかりガイドブック」',
+                    href: 'https://www.fsa.go.jp/policy/nisa2/book/index.html',
+                },
+            ]}
+            contentReviewedOn="2026年11月28日"
+            roadmapHref="/asset-building-roadmap"
+            roadmapProgress={{
+                step: 4,
+                nextHref: '/asset-building-roadmap#step-5',
+                nextTitle: '始める前・始めた後に備える',
+            }}
         />
     );
 }

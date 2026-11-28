@@ -11,7 +11,7 @@ export default function DollarCostAveragingPage() {
         <LearningTopicPage
             category="資産形成の基本"
             title="ドル・コスト平均法"
-            tags={['投資手法', '積立', '資産形成', 'リスク']}
+            tags={['初心者', '投資手法', '積立', '資産形成', 'リスク']}
             introduction="ドル・コスト平均法は、価格が変動する金融商品を、定期的に一定の金額ずつ購入していく方法です。"
             sections={[
                 {
@@ -32,6 +32,14 @@ export default function DollarCostAveragingPage() {
                 },
             ]}
             relatedTopic={{href: '/learn/index-investing', title: 'インデックス投資'}}
+            references={[
+                {
+                    label: '金融庁「NISA早わかりガイドブック」',
+                    href: 'https://www.fsa.go.jp/policy/nisa2/book/index.html',
+                },
+            ]}
+            contentReviewedOn="2026年11月28日"
+            roadmapHref="/asset-building-roadmap"
         />
     );
 }

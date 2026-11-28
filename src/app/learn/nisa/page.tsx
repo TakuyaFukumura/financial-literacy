@@ -12,7 +12,7 @@ export default function NisaPage() {
         <LearningTopicPage
             category="制度を知る"
             title="NISA"
-            tags={['制度', '税制', '資産形成', 'リスク']}
+            tags={['初心者', '制度', '税制', '資産形成', 'リスク']}
             introduction="NISAは、NISA口座で得た対象の投資利益が非課税になる制度です。"
             sections={[
                 {
@@ -33,6 +33,19 @@ export default function NisaPage() {
                 },
             ]}
             relatedTopic={{href: '/learn/compound-interest', title: '複利'}}
+            references={[
+                {
+                    label: '金融庁「NISAを知る」',
+                    href: 'https://www.fsa.go.jp/policy/nisa2/know/index.html',
+                },
+            ]}
+            contentReviewedOn="2026年11月28日"
+            roadmapHref="/asset-building-roadmap"
+            roadmapProgress={{
+                step: 2,
+                nextHref: '/learn/index-investing',
+                nextTitle: '投資信託とインデックス投資を知る',
+            }}
         >
             <NisaQuotaDiagram/>
         </LearningTopicPage>
