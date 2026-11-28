@@ -76,6 +76,10 @@ describe('RisksAndPitfallsPage', () => {
             'href',
             '/learn/loss-aversion'
         );
+        expect(within(biases).getByRole('link', {name: /サンクコスト効果/})).toHaveAttribute(
+            'href',
+            '/learn/sunk-cost-effect'
+        );
         expect(within(biases).getByRole('link', {name: /同調・群集心理/})).toHaveAttribute(
             'href',
             '/learn/herd-behavior'

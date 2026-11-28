@@ -94,6 +94,11 @@ const biases = [
         description: '損失を確定したくない気持ちが投資判断に与える影響と、見直し方を学びます。',
     },
     {
+        href: '/learn/sunk-cost-effect',
+        title: 'サンクコスト効果',
+        description: '過去に使ったお金や時間に判断を引きずられないための考え方を学びます。',
+    },
+    {
         href: '/learn/herd-behavior',
         title: '同調・群集心理',
         description: '周囲の人気や話題につられて投資するリスクと、判断前の確認点を学びます。',
