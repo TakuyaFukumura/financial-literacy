@@ -37,6 +37,11 @@ const topics = [
         title: '私募ファンドの注意点',
         description: '私募の仕組みや、運用実態・換金条件・事業者の登録状況を確認するポイントを学びます。',
     },
+    {
+        href: '/learn/new-build-one-room',
+        title: '新築ワンルームマンション投資の注意点',
+        description: '収支やサブリース、売却価格、ローンの条件など、契約前に確認したいポイントを学びます。',
+    },
 ];
 
 const risks = [
