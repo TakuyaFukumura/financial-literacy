@@ -11,6 +11,8 @@ export default function BinaryOptionsPage() {
         <LearningTopicPage
             category="投資トラブル・商品の注意点"
             title="バイナリーオプション"
+            backHref="/risks-and-pitfalls"
+            backLabel="リスクと落とし穴へ戻る"
             tags={['投資商品', '投資手法', 'リスク']}
             introduction="為替相場や株価指数などが、決められた時点で条件を満たすかどうかを予測する取引です。二者択一で簡単に見えても、購入額を失う可能性があり、仕組みや価格の決まり方を理解する必要があります。"
             sections={[

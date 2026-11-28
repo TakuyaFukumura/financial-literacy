@@ -2,6 +2,12 @@ import Link from 'next/link';
 
 const topics = [
     {
+        href: '/learn/emergency-fund',
+        category: '資産形成の基本',
+        title: '生活防衛資金',
+        description: '病気や失業などの急な出費に備える資金の考え方を学びます。',
+    },
+    {
         href: '/learn/simple-interest',
         category: '資産形成の基本',
         title: '単利',

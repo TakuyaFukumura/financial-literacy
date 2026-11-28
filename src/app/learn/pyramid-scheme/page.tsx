@@ -12,6 +12,8 @@ export default function PyramidSchemePage() {
         <LearningTopicPage
             category="投資トラブルを防ぐ"
             title="ねずみ講（無限連鎖講）"
+            backHref="/risks-and-pitfalls"
+            backLabel="リスクと落とし穴へ戻る"
             tags={['投資トラブル', 'リスク']}
             introduction="ねずみ講は、加入者が金品を出し、後から加わる人の金品から先に加わった人が出資額を上回る配当を受け取る仕組みです。無限に会員が増え続けることを前提とするため、続けることはできず、日本では無限連鎖講の防止に関する法律で開設・運営・加入・勧誘などが禁止されています。"
             sections={[

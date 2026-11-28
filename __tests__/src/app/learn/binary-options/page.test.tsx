@@ -6,6 +6,10 @@ describe('BinaryOptionsPage', () => {
         render(<BinaryOptionsPage/>);
 
         expect(screen.getByRole('heading', {name: 'バイナリーオプション'})).toBeInTheDocument();
+        expect(screen.getByRole('link', {name: '← リスクと落とし穴へ戻る'})).toHaveAttribute(
+            'href',
+            '/risks-and-pitfalls'
+        );
         expect(screen.getByRole('heading', {name: '損益分岐に必要な勝率は条件で変わる'})).toBeInTheDocument();
         expect(screen.getByText(/損益をプラスマイナスゼロにするには勝率60%が必要/)).toBeInTheDocument();
         expect(screen.getByText(/期待値が一律にマイナスと決まるわけではありません/)).toBeInTheDocument();

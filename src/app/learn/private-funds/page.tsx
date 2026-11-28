@@ -11,6 +11,8 @@ export default function PrivateFundsPage() {
         <LearningTopicPage
             category="投資トラブル・商品の注意点"
             title="私募ファンドの注意点"
+            backHref="/risks-and-pitfalls"
+            backLabel="リスクと落とし穴へ戻る"
             tags={['投資商品', '投資トラブル', 'リスク']}
             introduction="私募ファンドは、対象となる投資家を限って募集されるファンドです。「私募」は募集方法を表す言葉で、それだけで安全とも詐欺とも判断できません。投資対象や契約内容、運営者、資金の管理方法を確認することが大切です。"
             sections={[

@@ -11,6 +11,8 @@ export default function PriceVolatilityRiskPage() {
         <LearningTopicPage
             category="資産形成で知っておきたいリスク"
             title="価格変動リスク"
+            backHref="/risks-and-pitfalls"
+            backLabel="リスクと落とし穴へ戻る"
             tags={['投資商品', 'リスク']}
             introduction="株式や投資信託などの価格は、企業の業績や景気、金利、市場心理などの影響で変動します。購入時より価格が下がれば資産評価額も下がり、売却時に損失が確定することがあります。"
             sections={[

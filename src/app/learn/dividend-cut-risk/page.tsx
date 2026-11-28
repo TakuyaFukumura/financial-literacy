@@ -11,6 +11,8 @@ export default function DividendCutRiskPage() {
         <LearningTopicPage
             category="資産形成で知っておきたいリスク"
             title="減配リスク"
+            backHref="/risks-and-pitfalls"
+            backLabel="リスクと落とし穴へ戻る"
             tags={['株式', '配当', 'リスク']}
             introduction="株式の配当金は、企業の業績や財務状況、配当方針によって減ったり、支払われなくなったりすることがあります。過去の配当実績や高い利回りだけで、将来の配当を判断しないことが大切です。"
             sections={[

@@ -14,9 +14,30 @@ describe('LearningTopicPage', () => {
             />
         );
 
+        expect(screen.getByRole('link', {name: '← テーマ一覧へ戻る'})).toHaveAttribute('href', '/');
         const tags = screen.getByRole('list', {name: 'タグ'});
         expect(within(tags).getByText('資産形成')).toBeInTheDocument();
         expect(within(tags).getByText('リスク')).toBeInTheDocument();
+    });
+
+    it('必要に応じて記事一覧への戻り先を変更できる', () => {
+        render(
+            <LearningTopicPage
+                category="投資トラブル・商品の注意点"
+                title="テスト記事"
+                backHref="/risks-and-pitfalls"
+                backLabel="リスクと落とし穴へ戻る"
+                tags={['投資トラブル']}
+                introduction="記事の概要"
+                sections={[]}
+                relatedTopic={{href: '/learn/extra', title: '補足記事'}}
+            />
+        );
+
+        expect(screen.getByRole('link', {name: '← リスクと落とし穴へ戻る'})).toHaveAttribute(
+            'href',
+            '/risks-and-pitfalls'
+        );
     });
 
     it('ロードマップの位置・戻り先・次の地点と参考情報を表示する', () => {

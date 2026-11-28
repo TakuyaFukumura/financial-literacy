@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: 'リスクと落とし穴 | お金の学び場',
-    description: '投資トラブルや資産形成に関わるリスクを学び、確認したいポイントを知るための記事一覧です。',
+    description: '投資トラブル、資産形成のリスク、投資判断に影響する認知バイアスを学ぶ記事一覧です。',
 };
 
 const topics = [
@@ -37,6 +37,21 @@ const topics = [
         title: '私募ファンドの注意点',
         description: '私募の仕組みや、運用実態・換金条件・事業者の登録状況を確認するポイントを学びます。',
     },
+    {
+        href: '/learn/new-build-one-room',
+        title: '新築ワンルームマンション投資の注意点',
+        description: '収支やサブリース、売却価格、ローンの条件など、契約前に確認したいポイントを学びます。',
+    },
+    {
+        href: '/learn/automated-trading-tools',
+        title: '自動売買ツールの注意点',
+        description: '利益を保証する勧誘や、取引業者・契約条件を確認するポイントを学びます。',
+    },
+    {
+        href: '/learn/altcoin-risks',
+        title: '草コインの注意点',
+        description: '流動性や価格変動、トークンの仕組み、勧誘を受けたときの確認点を学びます。',
+    },
 ];
 
 const risks = [
@@ -64,6 +79,44 @@ const risks = [
         href: '/learn/inflation-risk',
         title: 'インフレリスク',
         description: '物価上昇によって預貯金や資産の実質的な価値が変化する影響を学びます。',
+    },
+    {
+        href: '/learn/asset-price-bubble',
+        title: 'バブルと資産価格の急落',
+        description: '日本の資産価格バブルを例に、価格上昇と信用の拡大、崩壊後の影響を学びます。',
+    },
+];
+
+const biases = [
+    {
+        href: '/learn/confirmation-bias',
+        title: '確証バイアス',
+        description: '自分の考えに合う情報ばかり集めてしまう傾向と、反対の根拠を確認する方法を学びます。',
+    },
+    {
+        href: '/learn/anchoring-bias',
+        title: 'アンカリング',
+        description: '買値や過去の高値に判断を引きずられないための考え方を学びます。',
+    },
+    {
+        href: '/learn/loss-aversion',
+        title: '損失回避',
+        description: '損失を確定したくない気持ちが投資判断に与える影響と、見直し方を学びます。',
+    },
+    {
+        href: '/learn/sunk-cost-effect',
+        title: 'サンクコスト効果',
+        description: '過去に使ったお金や時間に判断を引きずられないための考え方を学びます。',
+    },
+    {
+        href: '/learn/status-quo-bias',
+        title: '現状維持バイアス',
+        description: '変える手間や不安から今の投資を続けてしまう傾向と、見直し方を学びます。',
+    },
+    {
+        href: '/learn/herd-behavior',
+        title: '同調・群集心理',
+        description: '周囲の人気や話題につられて投資するリスクと、判断前の確認点を学びます。',
     },
 ];
 
@@ -114,7 +167,7 @@ export default function RisksAndPitfallsPage() {
                         リスクと落とし穴
                     </h1>
                     <p className="mt-5 text-lg leading-8 text-gray-600 dark:text-gray-300">
-                        投資トラブルを避けるための知識と、資産形成で理解しておきたいリスクを紹介します。
+                        投資トラブル、資産形成で知っておきたいリスク、投資判断に影響する認知バイアスを紹介します。
                         為替やインフレは避けるべきものではなく、影響を知って備えることが大切です。
                     </p>
                 </header>
@@ -131,6 +184,13 @@ export default function RisksAndPitfallsPage() {
                         資産形成で知っておきたいリスク
                     </h2>
                     <TopicList items={risks}/>
+                </section>
+
+                <section aria-labelledby="biases-heading" className="mt-12">
+                    <h2 id="biases-heading" className="mb-5 text-2xl font-bold text-gray-900 dark:text-white">
+                        投資判断に影響する認知バイアス
+                    </h2>
+                    <TopicList items={biases}/>
                 </section>
             </div>
         </main>

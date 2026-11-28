@@ -11,6 +11,8 @@ export default function ExchangeRateRiskPage() {
         <LearningTopicPage
             category="資産形成で知っておきたいリスク"
             title="為替リスク"
+            backHref="/risks-and-pitfalls"
+            backLabel="リスクと落とし穴へ戻る"
             tags={['為替', '投資商品', 'リスク']}
             introduction="外貨建て預金や海外の株式・投資信託などは、現地通貨での価格だけでなく、為替レートの変化によって円で見た価値が変わります。この影響を為替リスクといいます。"
             sections={[
