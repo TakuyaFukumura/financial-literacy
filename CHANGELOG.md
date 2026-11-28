@@ -6,3 +6,9 @@
 このプロジェクトは [Semantic Versioning](https://semver.org/lang/ja/) に従っています。
 
 ## [Unreleased]
+
+## [0.2.0] - 2026-11-28
+
+### Added
+
+- 金融リテラシー学習ページを追加し、複利とNISAの解説へ移動できるようにしました。

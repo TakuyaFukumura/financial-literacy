@@ -5,8 +5,8 @@ import Header from "./components/Header";
 import React from "react";
 
 export const metadata: Metadata = {
-    title: "Financial Literacy",
-    description: "SQLiteからメッセージを取得するシンプルなNext.jsアプリケーション",
+    title: "お金の学び場 | 金融リテラシー入門",
+    description: "複利やNISAなど、暮らしに役立つお金の知識を基礎から学べます。",
 };
 
 export default function RootLayout({

@@ -1,7 +1,7 @@
 # financial-literacy
 
-Next.jsを使ったシンプルな「Hello, world.」アプリケーションです。
-このプロジェクトは、SQLiteデータベースからメッセージを取得して表示する基本的な機能を提供します。
+Next.jsを使った金融リテラシー学習サイトです。
+トップページから複利やNISAなどのテーマを選び、基礎知識を学べます。
 
 ## 技術スタック
 
@@ -14,7 +14,8 @@ Next.jsを使ったシンプルな「Hello, world.」アプリケーションで
 
 ## 機能
 
-- SQLiteデータベースから「Hello, world.」メッセージを取得
+- 複利・NISAなどの学習テーマを一覧から選択
+- テーマごとの解説ページ間を移動
 - レスポンシブデザイン対応
 - ダークモード対応（手動切替機能付き）
     - ライトモードとダークモードの2つのモードを手動で切り替え可能
@@ -115,6 +116,9 @@ pnpm start
 │       ├── api/
 │       │   └── message/
 │       │       └── route.ts # APIエンドポイント
+│       ├── learn/
+│       │   ├── compound-interest/page.tsx # 複利の解説
+│       │   └── nisa/page.tsx              # NISAの解説
 │       ├── components/      # Reactコンポーネント
 │       │   ├── DarkModeProvider.tsx  # ダークモードProvider
 │       │   └── Header.tsx   # ヘッダーコンポーネント
