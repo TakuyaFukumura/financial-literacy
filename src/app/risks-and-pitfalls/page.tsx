@@ -41,6 +41,11 @@ const topics = [
 
 const risks = [
     {
+        href: '/learn/dividend-cut-risk',
+        title: '減配リスク',
+        description: '減配や無配が起きる理由や、高い配当利回りだけで判断しないための確認点を学びます。',
+    },
+    {
         href: '/learn/price-volatility-risk',
         title: '価格変動リスク',
         description: '価格変動で資産評価額が変わる仕組みを、リーマン・ショック時の日経平均を例に学びます。',

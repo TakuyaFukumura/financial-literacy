@@ -34,6 +34,10 @@ describe('RisksAndPitfallsPage', () => {
         );
 
         const risks = screen.getByRole('region', {name: '資産形成で知っておきたいリスク'});
+        expect(within(risks).getByRole('link', {name: /減配リスク/})).toHaveAttribute(
+            'href',
+            '/learn/dividend-cut-risk'
+        );
         expect(within(risks).getByRole('link', {name: /価格変動リスク/})).toHaveAttribute(
             'href',
             '/learn/price-volatility-risk'
