@@ -62,10 +62,23 @@ describe('RisksAndPitfallsPage', () => {
             'href',
             '/learn/inflation-risk'
         );
+
         const biases = screen.getByRole('region', {name: '投資判断に影響する認知バイアス'});
-        expect(within(biases).getByRole('link', {name: /投資判断に影響する認知バイアス/})).toHaveAttribute(
+        expect(within(biases).getByRole('link', {name: /確証バイアス/})).toHaveAttribute(
             'href',
-            '/learn/investment-biases'
+            '/learn/confirmation-bias'
+        );
+        expect(within(biases).getByRole('link', {name: /アンカリング/})).toHaveAttribute(
+            'href',
+            '/learn/anchoring-bias'
+        );
+        expect(within(biases).getByRole('link', {name: /損失回避/})).toHaveAttribute(
+            'href',
+            '/learn/loss-aversion'
+        );
+        expect(within(biases).getByRole('link', {name: /同調・群集心理/})).toHaveAttribute(
+            'href',
+            '/learn/herd-behavior'
         );
         expect(screen.getByText(/為替やインフレは避けるべきものではなく/)).toBeInTheDocument();
     });

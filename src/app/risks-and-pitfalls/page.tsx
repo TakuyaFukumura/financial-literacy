@@ -79,9 +79,24 @@ const risks = [
 
 const biases = [
     {
-        href: '/learn/investment-biases',
-        title: '投資判断に影響する認知バイアス',
-        description: '確証バイアスや損失回避など、投資判断に影響する考え方と対策を学びます。',
+        href: '/learn/confirmation-bias',
+        title: '確証バイアス',
+        description: '自分の考えに合う情報ばかり集めてしまう傾向と、反対の根拠を確認する方法を学びます。',
+    },
+    {
+        href: '/learn/anchoring-bias',
+        title: 'アンカリング',
+        description: '買値や過去の高値に判断を引きずられないための考え方を学びます。',
+    },
+    {
+        href: '/learn/loss-aversion',
+        title: '損失回避',
+        description: '損失を確定したくない気持ちが投資判断に与える影響と、見直し方を学びます。',
+    },
+    {
+        href: '/learn/herd-behavior',
+        title: '同調・群集心理',
+        description: '周囲の人気や話題につられて投資するリスクと、判断前の確認点を学びます。',
     },
 ];
 
