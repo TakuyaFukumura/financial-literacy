@@ -17,13 +17,15 @@ export default function BondCashFlowDiagram() {
                     <p className="mt-3 text-sm text-gray-700 dark:text-gray-300">投資家から発行体へ</p>
                     <p className="mt-1 text-xl font-bold text-gray-900 dark:text-white">10万円を払う</p>
                 </div>
-                <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-5 dark:border-emerald-900 dark:bg-emerald-950/40">
+                <div
+                    className="rounded-xl border border-emerald-200 bg-emerald-50 p-5 dark:border-emerald-900 dark:bg-emerald-950/40">
                     <h3 className="font-bold text-emerald-900 dark:text-emerald-200">2. 保有中</h3>
                     <p className="mt-3 text-sm text-gray-700 dark:text-gray-300">発行体から投資家へ</p>
                     <p className="mt-1 text-xl font-bold text-gray-900 dark:text-white">毎年1,000円</p>
                     <p className="mt-1 text-sm text-gray-700 dark:text-gray-300">利息を受け取る</p>
                 </div>
-                <div className="rounded-xl border border-amber-200 bg-amber-50 p-5 dark:border-amber-900 dark:bg-amber-950/40">
+                <div
+                    className="rounded-xl border border-amber-200 bg-amber-50 p-5 dark:border-amber-900 dark:bg-amber-950/40">
                     <h3 className="font-bold text-amber-900 dark:text-amber-200">3. 満期</h3>
                     <p className="mt-3 text-sm text-gray-700 dark:text-gray-300">発行体から投資家へ</p>
                     <p className="mt-1 text-xl font-bold text-gray-900 dark:text-white">元本10万円</p>

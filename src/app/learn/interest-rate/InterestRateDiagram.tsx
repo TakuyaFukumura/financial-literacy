@@ -17,7 +17,8 @@ export default function InterestRateDiagram() {
                     <p className="mt-3 text-gray-700 dark:text-gray-300">100万円 × 1%</p>
                     <p className="mt-1 text-2xl font-bold text-gray-900 dark:text-white">利息 1万円</p>
                 </div>
-                <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-5 dark:border-emerald-900 dark:bg-emerald-950/40">
+                <div
+                    className="rounded-xl border border-emerald-200 bg-emerald-50 p-5 dark:border-emerald-900 dark:bg-emerald-950/40">
                     <h3 className="font-bold text-emerald-900 dark:text-emerald-200">年利 3%</h3>
                     <p className="mt-3 text-gray-700 dark:text-gray-300">100万円 × 3%</p>
                     <p className="mt-1 text-2xl font-bold text-gray-900 dark:text-white">利息 3万円</p>

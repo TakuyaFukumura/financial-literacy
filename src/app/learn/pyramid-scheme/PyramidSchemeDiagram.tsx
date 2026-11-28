@@ -12,7 +12,8 @@ export default function PyramidSchemeDiagram() {
             </p>
 
             <div className="mt-5 space-y-3">
-                <div className="mx-auto max-w-xs rounded-xl border border-amber-300 bg-amber-50 p-4 text-center dark:border-amber-800 dark:bg-amber-950/40">
+                <div
+                    className="mx-auto max-w-xs rounded-xl border border-amber-300 bg-amber-50 p-4 text-center dark:border-amber-800 dark:bg-amber-950/40">
                     <p className="font-bold text-amber-950 dark:text-amber-100">先順位者（1人）</p>
                 </div>
 

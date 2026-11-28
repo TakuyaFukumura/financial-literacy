@@ -16,7 +16,8 @@ export default function StockOwnershipDiagram() {
                         会社は事業に使う資金を調達します。
                     </p>
                 </div>
-                <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-5 dark:border-emerald-900 dark:bg-emerald-950/40">
+                <div
+                    className="rounded-xl border border-emerald-200 bg-emerald-50 p-5 dark:border-emerald-900 dark:bg-emerald-950/40">
                     <h3 className="font-bold text-emerald-900 dark:text-emerald-200">2. 株主になる</h3>
                     <p className="mt-3 text-sm text-gray-700 dark:text-gray-300">株式を保有する</p>
                     <p className="mt-1 font-bold text-gray-900 dark:text-white">会社の一部を持つ</p>
@@ -24,7 +25,8 @@ export default function StockOwnershipDiagram() {
                         配当や議決権などの権利は、会社や株式の条件によって異なります。
                     </p>
                 </div>
-                <div className="rounded-xl border border-amber-200 bg-amber-50 p-5 dark:border-amber-900 dark:bg-amber-950/40">
+                <div
+                    className="rounded-xl border border-amber-200 bg-amber-50 p-5 dark:border-amber-900 dark:bg-amber-950/40">
                     <h3 className="font-bold text-amber-900 dark:text-amber-200">3. 市場で売買</h3>
                     <p className="mt-3 text-sm text-gray-700 dark:text-gray-300">投資家 ↔ 投資家</p>
                     <p className="mt-1 font-bold text-gray-900 dark:text-white">株式と代金を交換する</p>

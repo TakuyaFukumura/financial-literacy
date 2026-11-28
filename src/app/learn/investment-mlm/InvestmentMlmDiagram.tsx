@@ -9,9 +9,11 @@ export default function InvestmentMlmDiagram() {
             </h2>
 
             <div className="mt-5 grid gap-4 md:grid-cols-2">
-                <section className="rounded-xl border border-sky-200 bg-sky-50 p-5 dark:border-sky-900 dark:bg-sky-950/40">
+                <section
+                    className="rounded-xl border border-sky-200 bg-sky-50 p-5 dark:border-sky-900 dark:bg-sky-950/40">
                     <h3 className="font-bold text-sky-950 dark:text-sky-100">商品・サービスの販売と紹介</h3>
-                    <div className="mt-3 space-y-2 rounded-lg bg-white p-3 text-center text-sm font-semibold text-gray-800 dark:bg-gray-800 dark:text-gray-200">
+                    <div
+                        className="mt-3 space-y-2 rounded-lg bg-white p-3 text-center text-sm font-semibold text-gray-800 dark:bg-gray-800 dark:text-gray-200">
                         <p>販売：事業者 → 会員・販売員 → 購入者</p>
                         <p>紹介：既存会員 → 新しい会員</p>
                     </div>
@@ -20,7 +22,8 @@ export default function InvestmentMlmDiagram() {
                     </p>
                 </section>
 
-                <section className="rounded-xl border border-amber-200 bg-amber-50 p-5 dark:border-amber-900 dark:bg-amber-950/40">
+                <section
+                    className="rounded-xl border border-amber-200 bg-amber-50 p-5 dark:border-amber-900 dark:bg-amber-950/40">
                     <h3 className="font-bold text-amber-950 dark:text-amber-100">「投資」と勧誘されたら別に確認</h3>
                     <ul className="mt-3 space-y-2 text-sm leading-6 text-gray-700 dark:text-gray-300">
                         <li>何に投資するのか</li>

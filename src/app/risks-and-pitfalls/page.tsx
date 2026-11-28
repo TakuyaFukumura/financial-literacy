@@ -120,7 +120,7 @@ const biases = [
     },
 ];
 
-function TopicList({items}: {readonly items: typeof topics}) {
+function TopicList({items}: { readonly items: typeof topics }) {
     return (
         <ul className="grid gap-4 sm:grid-cols-2">
             {items.map((item) => (
@@ -135,7 +135,8 @@ function TopicList({items}: {readonly items: typeof topics}) {
                     >
                         <h3 className="text-xl font-bold text-gray-900 dark:text-white">{item.title}</h3>
                         <p className="mt-3 leading-7 text-gray-600 dark:text-gray-300">{item.description}</p>
-                        <span className="mt-5 inline-flex items-center gap-2 font-semibold text-emerald-700 dark:text-emerald-400">
+                        <span
+                            className="mt-5 inline-flex items-center gap-2 font-semibold text-emerald-700 dark:text-emerald-400">
                             <span>記事を読む</span>
                             <span aria-hidden="true">→</span>
                         </span>
@@ -148,7 +149,8 @@ function TopicList({items}: {readonly items: typeof topics}) {
 
 export default function RisksAndPitfallsPage() {
     return (
-        <main className="min-h-[calc(100vh-4rem)] bg-gradient-to-b from-amber-50 to-white px-4 py-12 dark:from-gray-900 dark:to-gray-950 sm:px-6 sm:py-20">
+        <main
+            className="min-h-[calc(100vh-4rem)] bg-gradient-to-b from-amber-50 to-white px-4 py-12 dark:from-gray-900 dark:to-gray-950 sm:px-6 sm:py-20">
             <div className="mx-auto max-w-5xl">
                 <nav aria-label="ページナビゲーション">
                     <Link

@@ -13,7 +13,8 @@ export default function PonziSchemeDiagram() {
 
             <ol className="mt-5 list-none space-y-3">
                 <li>
-                    <div className="rounded-xl border border-sky-200 bg-sky-50 p-4 dark:border-sky-900 dark:bg-sky-950/40">
+                    <div
+                        className="rounded-xl border border-sky-200 bg-sky-50 p-4 dark:border-sky-900 dark:bg-sky-950/40">
                         <h3 className="font-bold text-sky-950 dark:text-sky-100">新たな出資者</h3>
                         <p className="mt-1 text-sm text-gray-700 dark:text-gray-300">投資として資金を預ける</p>
                     </div>
@@ -22,7 +23,8 @@ export default function PonziSchemeDiagram() {
                     </p>
                 </li>
                 <li>
-                    <div className="rounded-xl border border-amber-200 bg-amber-50 p-4 dark:border-amber-900 dark:bg-amber-950/40">
+                    <div
+                        className="rounded-xl border border-amber-200 bg-amber-50 p-4 dark:border-amber-900 dark:bg-amber-950/40">
                         <h3 className="font-bold text-amber-950 dark:text-amber-100">運営者</h3>
                         <p className="mt-1 text-sm text-gray-700 dark:text-gray-300">運用益がない、または支払いに足りない</p>
                     </div>
