@@ -55,10 +55,7 @@ describe('Home', () => {
             'href',
             '/learn/long-term-installment-diversified'
         );
-        expect(within(topics).getByRole('link', {name: /ポンジスキーム/})).toHaveAttribute(
-            'href',
-            '/learn/ponzi-scheme'
-        );
+        expect(within(topics).queryByRole('link', {name: /ポンジスキーム/})).not.toBeInTheDocument();
         expect(within(topics).getByRole('link', {name: /為替/})).toHaveAttribute(
             'href',
             '/learn/exchange-rate'

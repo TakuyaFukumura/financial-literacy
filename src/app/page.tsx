@@ -74,12 +74,6 @@ const topics = [
         description: '投資期間や購入方法、投資先を考える基本を学びます。',
     },
     {
-        href: '/learn/ponzi-scheme',
-        category: '投資トラブルを防ぐ',
-        title: 'ポンジスキーム',
-        description: '詐欺の仕組みと、勧誘を受けたときの対処を学びます。',
-    },
-    {
         href: '/learn/exchange-rate',
         category: '経済の基礎',
         title: '為替',
