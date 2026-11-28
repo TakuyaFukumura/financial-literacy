@@ -12,13 +12,17 @@ describe('RisksAndPitfallsPage', () => {
             'href',
             '/learn/distribution-from-principal'
         );
-        expect(within(pitfalls).getByRole('link', {name: /ポンジスキーム/})).toHaveAttribute(
+        expect(within(pitfalls).getByRole('link', {name: /^ポンジスキーム/})).toHaveAttribute(
             'href',
             '/learn/ponzi-scheme'
         );
         expect(within(pitfalls).getByRole('link', {name: /投資を装うマルチ商法（MLM）/})).toHaveAttribute(
             'href',
             '/learn/investment-mlm'
+        );
+        expect(within(pitfalls).getByRole('link', {name: /ねずみ講（無限連鎖講）/})).toHaveAttribute(
+            'href',
+            '/learn/pyramid-scheme'
         );
 
         const risks = screen.getByRole('region', {name: '資産形成で知っておきたいリスク'});

@@ -22,6 +22,11 @@ const topics = [
         title: '投資を装うマルチ商法（MLM）',
         description: '投資をうたう勧誘で、連鎖販売取引の仕組みや契約内容を確認するポイントを学びます。',
     },
+    {
+        href: '/learn/pyramid-scheme',
+        title: 'ねずみ講（無限連鎖講）',
+        description: 'ねずみ講の仕組みや、MLM・ポンジスキームとの違い、勧誘を受けたときの対応を学びます。',
+    },
 ];
 
 const risks = [
