@@ -56,6 +56,15 @@ describe('Header', () => {
             );
         });
 
+        it('リスクと落とし穴の一覧へのリンクが表示される', () => {
+            renderWithProvider();
+
+            expect(screen.getByRole('link', {name: 'リスクと落とし穴'})).toHaveAttribute(
+                'href',
+                '/risks-and-pitfalls'
+            );
+        });
+
         it('ヘッダーのHTML構造が正しい', () => {
             renderWithProvider();
 
