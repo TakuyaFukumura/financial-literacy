@@ -80,6 +80,10 @@ describe('RisksAndPitfallsPage', () => {
             'href',
             '/learn/sunk-cost-effect'
         );
+        expect(within(biases).getByRole('link', {name: /現状維持バイアス/})).toHaveAttribute(
+            'href',
+            '/learn/status-quo-bias'
+        );
         expect(within(biases).getByRole('link', {name: /同調・群集心理/})).toHaveAttribute(
             'href',
             '/learn/herd-behavior'
