@@ -62,6 +62,10 @@ describe('RisksAndPitfallsPage', () => {
             'href',
             '/learn/inflation-risk'
         );
+        expect(within(risks).getByRole('link', {name: /バブルと資産価格の急落/})).toHaveAttribute(
+            'href',
+            '/learn/asset-price-bubble'
+        );
 
         const biases = screen.getByRole('region', {name: '投資判断に影響する認知バイアス'});
         expect(within(biases).getByRole('link', {name: /確証バイアス/})).toHaveAttribute(

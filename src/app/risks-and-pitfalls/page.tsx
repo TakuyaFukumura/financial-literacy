@@ -75,6 +75,11 @@ const risks = [
         title: 'インフレリスク',
         description: '物価上昇によって預貯金や資産の実質的な価値が変化する影響を学びます。',
     },
+    {
+        href: '/learn/asset-price-bubble',
+        title: 'バブルと資産価格の急落',
+        description: '日本の資産価格バブルを例に、価格上昇と信用の拡大、崩壊後の影響を学びます。',
+    },
 ];
 
 const biases = [
