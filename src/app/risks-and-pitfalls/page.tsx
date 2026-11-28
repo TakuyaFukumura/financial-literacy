@@ -47,6 +47,11 @@ const topics = [
         title: '自動売買ツールの注意点',
         description: '利益を保証する勧誘や、取引業者・契約条件を確認するポイントを学びます。',
     },
+    {
+        href: '/learn/altcoin-risks',
+        title: '草コインの注意点',
+        description: '流動性や価格変動、トークンの仕組み、勧誘を受けたときの確認点を学びます。',
+    },
 ];
 
 const risks = [
