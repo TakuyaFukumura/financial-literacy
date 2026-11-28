@@ -31,6 +31,11 @@ const topics = [
 
 const risks = [
     {
+        href: '/learn/price-volatility-risk',
+        title: '価格変動リスク',
+        description: '価格変動で資産評価額が変わる仕組みを、リーマン・ショック時の日経平均を例に学びます。',
+    },
+    {
         href: '/learn/leverage-and-margin-call',
         title: 'レバレッジと追証',
         description: 'レバレッジで損益が拡大する仕組みや、追証の条件・取引前の確認点を学びます。',
