@@ -42,9 +42,10 @@ export default function LongTermInstallmentDiversifiedPage() {
             contentReviewedOn="2026年11月28日"
             roadmapHref="/asset-building-roadmap"
             roadmapProgress={{
-                step: 4,
-                nextHref: '/asset-building-roadmap#step-5',
-                nextTitle: '始める前・始めた後に備える',
+                step: 7,
+                totalSteps: 8,
+                nextHref: '/learn/index-investing',
+                nextTitle: 'インデックス投資を学ぶ',
             }}
         />
     );

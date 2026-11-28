@@ -2,6 +2,12 @@ import Link from 'next/link';
 
 const topics = [
     {
+        href: '/learn/pre-investment-household',
+        category: '資産形成の基本',
+        title: '投資を考える前の家計整理',
+        description: '家計の現状、固定費、高金利負債を確認するポイントを学びます。',
+    },
+    {
         href: '/learn/emergency-fund',
         category: '資産形成の基本',
         title: '生活防衛資金',

@@ -19,10 +19,9 @@ describe('NisaPage', () => {
             'href',
             '/asset-building-roadmap'
         );
-        expect(screen.getByRole('link', {name: /次の地点：投資信託とインデックス投資を知る/})).toHaveAttribute(
-            'href',
-            '/learn/index-investing'
-        );
+        expect(screen.getByText('資産形成ロードマップ 8 / 8')).toBeInTheDocument();
+        expect(screen.getByText(/主ルートはここまでです。証券口座の開設や投資開始は任意です。/)).toBeInTheDocument();
+        expect(screen.queryByRole('link', {name: /次の地点/})).not.toBeInTheDocument();
         expect(screen.getByRole('link', {name: '関連記事：複利'})).toHaveAttribute(
             'href',
             '/learn/compound-interest'

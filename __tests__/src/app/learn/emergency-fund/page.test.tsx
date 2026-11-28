@@ -14,5 +14,10 @@ describe('EmergencyFundPage', () => {
             'https://www.jafp.or.jp/know/lifeplan/indication/'
         );
         expect(screen.getByRole('link', {name: /テーマ一覧へ戻る/})).toHaveAttribute('href', '/');
+        expect(screen.getByText('資産形成ロードマップ 6 / 8')).toBeInTheDocument();
+        expect(screen.getByRole('link', {name: /次の地点：投資の基礎：長期・積立・分散/})).toHaveAttribute(
+            'href',
+            '/learn/long-term-installment-diversified'
+        );
     });
 });

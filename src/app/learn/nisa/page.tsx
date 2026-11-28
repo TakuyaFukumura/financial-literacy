@@ -43,9 +43,9 @@ export default function NisaPage() {
             contentReviewedOn="2026年11月28日"
             roadmapHref="/asset-building-roadmap"
             roadmapProgress={{
-                step: 2,
-                nextHref: '/learn/index-investing',
-                nextTitle: '投資信託とインデックス投資を知る',
+                step: 8,
+                totalSteps: 8,
+                completionMessage: '主ルートはここまでです。証券口座の開設や投資開始は任意です。',
             }}
         >
             <NisaQuotaDiagram/>

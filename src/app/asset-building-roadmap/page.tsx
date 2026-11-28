@@ -15,6 +15,7 @@ type RoadmapStop = {
     side: 'left' | 'right';
     href?: string;
     linkLabel?: string;
+    followupLink?: {href: string; label: string};
     checklist?: readonly string[];
     optionalLink?: {href: string; label: string};
 };
@@ -22,63 +23,96 @@ type RoadmapStop = {
 const roadmapStops: readonly RoadmapStop[] = [
     {
         step: 1,
-        area: '家計の土台を整える',
+        area: '目的と目標を整理する',
         startsArea: true,
-        title: '家計と投資目的を確認する',
-        description: '投資を考える前に、生活や資金の使い道を振り返ります。',
+        title: '投資目的を確認する',
+        description: 'なぜ資産形成や投資を考えるのか、実現したいことを整理します。',
         side: 'left',
         checklist: [
-            '生活費や近い将来に使う予定のお金を、投資資金と分けている',
-            '投資の目的と、お金を使う時期を考えている',
-            '投資した資産の価値が下がる可能性を理解している',
+            '投資を考えるきっかけや目的を整理した',
+            '投資以外の方法も含めて考えている',
         ],
     },
     {
         step: 2,
-        area: '制度と投資対象を知る',
-        startsArea: true,
-        title: 'NISAの仕組みを知る',
-        description: 'NISAの非課税制度と投資枠を学びます。非課税でも元本は保証されません。',
+        area: '目的と目標を整理する',
+        startsArea: false,
+        title: '投資目標を設定する',
+        description: '目標額や使う時期を考えます。目標は仮置きでき、将来見直せます。',
         side: 'right',
-        href: '/learn/nisa',
-        linkLabel: 'NISAの基本を読む',
+        checklist: [
+            '目標額や、いつ使うお金かを考えた',
+            '状況に応じて目標を見直せる',
+            '目標を立てても投資成果は保証されないと理解した',
+        ],
     },
     {
         step: 3,
-        area: '制度と投資対象を知る',
-        startsArea: false,
-        title: '投資信託とインデックス投資を知る',
-        description: '指数の違いや投資対象、費用、値下がりや為替のリスクを確認します。',
+        area: '家計の土台を整える',
+        startsArea: true,
+        title: '家計の現状を把握する',
+        description: '手取り収入と毎月の支出を書き出し、現在の収支を確認します。',
         side: 'left',
-        href: '/learn/index-investing',
-        linkLabel: 'インデックス投資を学ぶ',
+        href: '/learn/pre-investment-household#household-status',
+        linkLabel: '家計の現状を把握する',
     },
     {
         step: 4,
-        area: '投資方法を考える',
-        startsArea: true,
-        title: '長期・積立・分散を考える',
-        description: 'それぞれの考え方と、利益や損失回避を保証するものではないことを学びます。',
+        area: '家計の土台を整える',
+        startsArea: false,
+        title: '家計の収支を改善する',
+        description: '固定費などの契約や利用状況を確認し、見直せる点を考えます。',
         side: 'right',
+        href: '/learn/pre-investment-household#fixed-costs',
+        linkLabel: '固定費などを見直す',
+    },
+    {
+        step: 5,
+        area: '家計の土台を整える',
+        startsArea: false,
+        title: '高金利負債への対応を考える',
+        description: '残高・金利・返済条件を確認し、必要に応じた相談先を知ります。',
+        side: 'left',
+        href: '/learn/pre-investment-household#debts',
+        linkLabel: '負債と相談先を確認する',
+    },
+    {
+        step: 6,
+        area: '家計の土台を整える',
+        startsArea: false,
+        title: '生活防衛資金の考え方を知る',
+        description: '必要額の考え方や準備方法を学びます。貯め終えることは次へ進む条件ではありません。',
+        side: 'right',
+        href: '/learn/emergency-fund',
+        linkLabel: '生活防衛資金について学ぶ',
+    },
+    {
+        step: 7,
+        area: '投資の基礎を知る',
+        startsArea: true,
+        title: '投資の基礎を知る',
+        description: 'まず長期・積立・分散を学び、続けてインデックス投資を確認します。',
+        side: 'left',
         href: '/learn/long-term-installment-diversified',
-        linkLabel: '長期・積立・分散投資を学ぶ',
+        linkLabel: '先に読む：長期・積立・分散',
+        followupLink: {
+            href: '/learn/index-investing',
+            label: '続けて読む：インデックス投資',
+        },
         optionalLink: {
             href: '/learn/dollar-cost-averaging',
             label: '任意の補足：ドル・コスト平均法',
         },
     },
     {
-        step: 5,
-        area: '始める前に備える',
+        step: 8,
+        area: '制度を知る',
         startsArea: true,
-        title: '始める前・始めた後に備える',
-        description: '積立額や、値下がりしたときの行動、見直し方を確認します。',
-        side: 'left',
-        checklist: [
-            '積立額は、家計に無理なく続けられる範囲になっている',
-            '値下がりした場合に慌てて判断しないための考え方を確認した',
-            '制度や商品の最新情報を公式資料で確認する方法が分かる',
-        ],
+        title: 'NISAの仕組みを知る',
+        description: 'NISAの非課税制度と投資枠を学びます。非課税でも元本は保証されません。',
+        side: 'right',
+        href: '/learn/nisa',
+        linkLabel: 'NISAの基本を読む',
     },
 ];
 
@@ -129,6 +163,21 @@ function RoadmapStopCard({stop}: {stop: RoadmapStop}) {
                 </Link>
             )}
 
+            {stop.followupLink && (
+                <p className="mt-2 text-sm">
+                    <Link
+                        href={stop.followupLink.href}
+                        className="font-semibold text-emerald-700 hover:underline
+                        focus-visible:outline-2 focus-visible:outline-offset-4
+                        focus-visible:outline-emerald-700 dark:text-emerald-400
+                        dark:focus-visible:outline-emerald-400"
+                    >
+                        {stop.followupLink.label}
+                        <span aria-hidden="true"> →</span>
+                    </Link>
+                </p>
+            )}
+
             {stop.optionalLink && (
                 <p className="mt-4 border-t border-gray-200 pt-4 text-sm dark:border-gray-700">
                     <Link
@@ -168,10 +217,10 @@ export default function AssetBuildingRoadmapPage() {
                         資産形成ロードマップ
                     </h1>
                     <p className="mt-5 text-lg leading-8 text-gray-600 dark:text-gray-300">
-                        NISAで全世界株式インデックスファンドの積立を検討するために、仕組みやリスクを5つの地点で確認します。
+                        投資目的と目標を整理し、家計の準備、投資の基礎、NISAの順に8つの地点で学びます。
                     </p>
                     <p className="mt-5 rounded-xl border border-amber-200 bg-amber-50 p-4 leading-7 text-gray-700 dark:border-amber-900 dark:bg-amber-950/40 dark:text-gray-200">
-                        このロードマップは金融知識の学習を目的としています。投資を始めることや特定の商品を買うことを勧めるものではありません。
+                        このロードマップは金融知識の学習を目的としています。投資を始めることや特定の商品を買うことを勧めるものではありません。生活防衛資金を貯め終えることも、投資を始める条件ではありません。
                     </p>
                 </header>
 
@@ -246,7 +295,7 @@ export default function AssetBuildingRoadmapPage() {
                             />
                         </svg>
 
-                        <ol aria-label="5つの学習地点" className="relative space-y-6 pl-14 md:space-y-0 md:pl-0">
+                        <ol aria-label="8つの学習地点" className="relative space-y-6 pl-14 md:space-y-0 md:pl-0">
                             {roadmapStops.map((stop) => (
                                 <li
                                     key={stop.step}
@@ -277,6 +326,20 @@ export default function AssetBuildingRoadmapPage() {
                         </ol>
                     </div>
                 </section>
+
+                <aside
+                    id="optional-next-action"
+                    aria-labelledby="optional-next-action-heading"
+                    className="mt-10 rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-700 dark:bg-gray-800 sm:p-7"
+                >
+                    <p className="text-sm font-semibold text-emerald-700 dark:text-emerald-400">任意の行動</p>
+                    <h2 id="optional-next-action-heading" className="mt-2 text-xl font-bold text-gray-900 dark:text-white">
+                        主ルートの後：証券口座の開設を検討する
+                    </h2>
+                    <p className="mt-3 leading-7 text-gray-600 dark:text-gray-300">
+                        必要だと感じた場合に、金融機関の公式案内で口座の条件を確認してください。口座開設や投資開始は必須ではなく、主ルートはNISAの学習で完了です。
+                    </p>
+                </aside>
 
                 <footer className="mt-12 border-t border-gray-200 pt-8 dark:border-gray-700">
                     <p className="text-sm leading-6 text-gray-500 dark:text-gray-400">

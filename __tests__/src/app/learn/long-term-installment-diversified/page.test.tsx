@@ -14,9 +14,10 @@ describe('LongTermInstallmentDiversifiedPage', () => {
             'href',
             '/learn/dollar-cost-averaging'
         );
-        expect(screen.getByRole('link', {name: /次の地点：始める前・始めた後に備える/})).toHaveAttribute(
+        expect(screen.getByText('資産形成ロードマップ 7 / 8')).toBeInTheDocument();
+        expect(screen.getByRole('link', {name: /次の地点：インデックス投資を学ぶ/})).toHaveAttribute(
             'href',
-            '/asset-building-roadmap#step-5'
+            '/learn/index-investing'
         );
     });
 });
