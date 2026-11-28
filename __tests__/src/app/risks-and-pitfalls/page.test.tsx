@@ -26,6 +26,10 @@ describe('RisksAndPitfallsPage', () => {
         );
 
         const risks = screen.getByRole('region', {name: '資産形成で知っておきたいリスク'});
+        expect(within(risks).getByRole('link', {name: /レバレッジと追証/})).toHaveAttribute(
+            'href',
+            '/learn/leverage-and-margin-call'
+        );
         expect(within(risks).getByRole('link', {name: /為替リスク/})).toHaveAttribute(
             'href',
             '/learn/exchange-rate-risk'

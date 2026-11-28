@@ -31,6 +31,11 @@ const topics = [
 
 const risks = [
     {
+        href: '/learn/leverage-and-margin-call',
+        title: 'レバレッジと追証',
+        description: 'レバレッジで損益が拡大する仕組みや、追証の条件・取引前の確認点を学びます。',
+    },
+    {
         href: '/learn/exchange-rate-risk',
         title: '為替リスク',
         description: '為替レートの変動が外貨建て資産の円換算額に与える影響を学びます。',
