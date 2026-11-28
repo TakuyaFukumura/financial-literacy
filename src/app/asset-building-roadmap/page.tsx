@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 type RoadmapStop = {
     step: number;
     area: string;
+    startsArea: boolean;
     title: string;
     description: string;
     side: 'left' | 'right';
@@ -22,6 +23,7 @@ const roadmapStops: readonly RoadmapStop[] = [
     {
         step: 1,
         area: '家計の土台を整える',
+        startsArea: true,
         title: '家計と投資目的を確認する',
         description: '投資を考える前に、生活や資金の使い道を振り返ります。',
         side: 'left',
@@ -34,6 +36,7 @@ const roadmapStops: readonly RoadmapStop[] = [
     {
         step: 2,
         area: '制度と投資対象を知る',
+        startsArea: true,
         title: 'NISAの仕組みを知る',
         description: 'NISAの非課税制度と投資枠を学びます。非課税でも元本は保証されません。',
         side: 'right',
@@ -43,6 +46,7 @@ const roadmapStops: readonly RoadmapStop[] = [
     {
         step: 3,
         area: '制度と投資対象を知る',
+        startsArea: false,
         title: '投資信託とインデックス投資を知る',
         description: '指数の違いや投資対象、費用、値下がりや為替のリスクを確認します。',
         side: 'left',
@@ -52,6 +56,7 @@ const roadmapStops: readonly RoadmapStop[] = [
     {
         step: 4,
         area: '投資方法を考える',
+        startsArea: true,
         title: '長期・積立・分散を考える',
         description: 'それぞれの考え方と、利益や損失回避を保証するものではないことを学びます。',
         side: 'right',
@@ -65,6 +70,7 @@ const roadmapStops: readonly RoadmapStop[] = [
     {
         step: 5,
         area: '始める前に備える',
+        startsArea: true,
         title: '始める前・始めた後に備える',
         description: '積立額や、値下がりしたときの行動、見直し方を確認します。',
         side: 'left',
@@ -84,12 +90,18 @@ function RoadmapStopCard({stop}: {stop: RoadmapStop}) {
                 ? 'md:col-start-1 md:justify-self-end'
                 : 'md:col-start-3 md:justify-self-start'} md:row-start-1 md:w-full md:max-w-md`}
         >
-            <p className="text-sm font-semibold text-emerald-700 dark:text-emerald-400">
-                {stop.area}
-            </p>
-            <h3 className="mt-2 text-xl font-bold text-gray-900 dark:text-white">
+            {stop.startsArea && (
+                <h3
+                    id={`area-${stop.step}`}
+                    className="mb-4 border-l-4 border-emerald-500 pl-3 text-base font-bold text-emerald-800
+                    dark:text-emerald-300"
+                >
+                    {stop.area}
+                </h3>
+            )}
+            <h4 className="text-xl font-bold text-gray-900 dark:text-white">
                 {stop.title}
-            </h3>
+            </h4>
             <p className="mt-3 leading-7 text-gray-600 dark:text-gray-300">
                 {stop.description}
             </p>

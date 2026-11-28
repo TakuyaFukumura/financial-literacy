@@ -23,5 +23,9 @@ describe('NisaPage', () => {
             'href',
             '/learn/index-investing'
         );
+        expect(screen.getByRole('link', {name: '関連記事：複利'})).toHaveAttribute(
+            'href',
+            '/learn/compound-interest'
+        );
     });
 });

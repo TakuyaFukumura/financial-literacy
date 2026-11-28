@@ -33,6 +33,7 @@ export default function NisaPage() {
                 },
             ]}
             relatedTopic={{href: '/learn/compound-interest', title: '複利'}}
+            relatedTopicLabel="関連記事"
             references={[
                 {
                     label: '金融庁「NISAを知る」',

@@ -18,7 +18,18 @@ describe('AssetBuildingRoadmapPage', () => {
         ];
 
         for (const title of stopTitles) {
-            expect(within(roadmap).getByRole('heading', {name: title})).toBeInTheDocument();
+            expect(within(roadmap).getByRole('heading', {name: title, level: 4})).toBeInTheDocument();
+        }
+
+        const areaTitles = [
+            '家計の土台を整える',
+            '制度と投資対象を知る',
+            '投資方法を考える',
+            '始める前に備える',
+        ];
+        expect(within(roadmap).getAllByRole('heading', {level: 3})).toHaveLength(4);
+        for (const title of areaTitles) {
+            expect(within(roadmap).getByRole('heading', {name: title, level: 3})).toBeInTheDocument();
         }
 
         expect(within(roadmap).getByRole('link', {name: 'NISAの基本を読む'})).toHaveAttribute(

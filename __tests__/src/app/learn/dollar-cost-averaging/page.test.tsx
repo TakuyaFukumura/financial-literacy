@@ -12,7 +12,7 @@ describe('DollarCostAveragingPage', () => {
             'href',
             '/asset-building-roadmap'
         );
-        expect(screen.getByRole('link', {name: '次に読む：インデックス投資'})).toHaveAttribute(
+        expect(screen.getByRole('link', {name: '関連記事：インデックス投資'})).toHaveAttribute(
             'href',
             '/learn/index-investing'
         );

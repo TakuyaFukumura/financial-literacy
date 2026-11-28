@@ -32,6 +32,7 @@ export default function DollarCostAveragingPage() {
                 },
             ]}
             relatedTopic={{href: '/learn/index-investing', title: 'インデックス投資'}}
+            relatedTopicLabel="関連記事"
             references={[
                 {
                     label: '金融庁「NISA早わかりガイドブック」',

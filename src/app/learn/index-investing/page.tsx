@@ -36,6 +36,7 @@ export default function IndexInvestingPage() {
                 },
             ]}
             relatedTopic={{href: '/learn/nisa', title: 'NISA'}}
+            relatedTopicLabel="関連記事"
             references={[
                 {
                     label: '金融庁「NISA特設ウェブサイト 資料コーナー」',

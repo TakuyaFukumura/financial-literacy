@@ -14,6 +14,10 @@ describe('IndexInvestingPage', () => {
             'href',
             '/learn/long-term-installment-diversified'
         );
+        expect(screen.getByRole('link', {name: '関連記事：NISA'})).toHaveAttribute(
+            'href',
+            '/learn/nisa'
+        );
         expect(screen.getByRole('link', {name: '金融庁「NISA特設ウェブサイト 資料コーナー」'})).toBeInTheDocument();
     });
 });
