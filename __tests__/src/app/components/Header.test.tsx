@@ -47,6 +47,15 @@ describe('Header', () => {
             expect(screen.getByRole('link', {name: 'お金の学び場'})).toHaveAttribute('href', '/');
         });
 
+        it('資産形成ロードマップへのリンクが表示される', () => {
+            renderWithProvider();
+
+            expect(screen.getByRole('link', {name: 'ロードマップを見る'})).toHaveAttribute(
+                'href',
+                '/asset-building-roadmap'
+            );
+        });
+
         it('ヘッダーのHTML構造が正しい', () => {
             renderWithProvider();
 
