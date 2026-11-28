@@ -46,9 +46,10 @@ export default function IndexInvestingPage() {
             contentReviewedOn="2026年11月28日"
             roadmapHref="/asset-building-roadmap"
             roadmapProgress={{
-                step: 3,
-                nextHref: '/learn/long-term-installment-diversified',
-                nextTitle: '長期・積立・分散を考える',
+                step: 7,
+                totalSteps: 8,
+                nextHref: '/learn/nisa',
+                nextTitle: 'NISAの仕組みを知る',
             }}
         />
     );

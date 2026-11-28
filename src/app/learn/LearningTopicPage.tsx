@@ -29,6 +29,7 @@ export type LearningTag =
     | '企業分析'
     | '預金'
     | 'ローン'
+    | '家計管理'
     | '資本'
     | '格差'
     | '初心者';
@@ -40,17 +41,24 @@ type LearningTopicPageProps = {
     backLabel?: string;
     tags: readonly LearningTag[];
     introduction: string;
-    sections: {heading: string; body: string}[];
+    sections: {id?: string; heading: string; body: string}[];
     relatedTopic: {href: string; title: string};
     relatedTopicLabel?: string;
     references?: readonly {label: string; href: string}[];
     contentReviewedOn?: string;
     roadmapHref?: string;
-    roadmapProgress?: {
-        step: number;
-        nextHref: string;
-        nextTitle: string;
-    };
+    roadmapProgress?:
+        | {
+            step: number;
+            totalSteps: number;
+            nextHref: string;
+            nextTitle: string;
+        }
+        | {
+            step: number;
+            totalSteps: number;
+            completionMessage: string;
+        };
     children?: ReactNode;
 };
 
@@ -115,7 +123,7 @@ export default function LearningTopicPage({
 
                 <div className="divide-y divide-gray-200 dark:divide-gray-700">
                     {sections.map((section) => (
-                        <section key={section.heading} className="py-8">
+                        <section key={section.heading} id={section.id} className="py-8">
                             <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
                                 {section.heading}
                             </h2>
@@ -163,31 +171,44 @@ export default function LearningTopicPage({
                 )}
 
                 {roadmapProgress && (
-                    <Link
-                        href={roadmapProgress.nextHref}
-                        className="mt-8 flex items-center justify-between rounded-xl border border-emerald-200
-                        bg-emerald-50 p-5 font-semibold text-gray-900 transition hover:border-emerald-400
-                        focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-700
-                        dark:border-emerald-900 dark:bg-emerald-950/40 dark:text-white
-                        dark:hover:border-emerald-600 dark:focus-visible:outline-emerald-400"
-                    >
-                        <span>
-                            <span className="block text-sm font-medium text-emerald-800 dark:text-emerald-300">
-                                資産形成ロードマップ {roadmapProgress.step} / 5
+                    'nextHref' in roadmapProgress ? (
+                        <Link
+                            href={roadmapProgress.nextHref}
+                            className="mt-8 flex items-center justify-between rounded-xl border border-emerald-200
+                            bg-emerald-50 p-5 font-semibold text-gray-900 transition hover:border-emerald-400
+                            focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-700
+                            dark:border-emerald-900 dark:bg-emerald-950/40 dark:text-white
+                            dark:hover:border-emerald-600 dark:focus-visible:outline-emerald-400"
+                        >
+                            <span>
+                                <span className="block text-sm font-medium text-emerald-800 dark:text-emerald-300">
+                                    資産形成ロードマップ {roadmapProgress.step} / {roadmapProgress.totalSteps}
+                                </span>
+                                <span className="mt-1 block">次の地点：{roadmapProgress.nextTitle}</span>
                             </span>
-                            <span className="mt-1 block">次の地点：{roadmapProgress.nextTitle}</span>
-                        </span>
+                            <span aria-hidden="true" className="text-emerald-700 dark:text-emerald-400">→</span>
+                        </Link>
+                    ) : (
+                        <div className="mt-8 rounded-xl border border-emerald-200 bg-emerald-50 p-5
+                        font-semibold text-gray-900 dark:border-emerald-900 dark:bg-emerald-950/40 dark:text-white">
+                            <span className="block text-sm font-medium text-emerald-800 dark:text-emerald-300">
+                                資産形成ロードマップ {roadmapProgress.step} / {roadmapProgress.totalSteps}
+                            </span>
+                            <span className="mt-1 block">{roadmapProgress.completionMessage}</span>
+                        </div>
+                    )
+                )}
+
+                {(!roadmapProgress || !('nextHref' in roadmapProgress) ||
+                    roadmapProgress.nextHref !== relatedTopic.href) && (
+                    <Link
+                        href={relatedTopic.href}
+                        className="mt-4 flex items-center justify-between rounded-xl border border-gray-200 bg-white p-5 font-semibold text-gray-900 transition hover:border-emerald-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:hover:border-emerald-600"
+                    >
+                        <span>{relatedTopicLabel}：{relatedTopic.title}</span>
                         <span aria-hidden="true" className="text-emerald-700 dark:text-emerald-400">→</span>
                     </Link>
                 )}
-
-                <Link
-                    href={relatedTopic.href}
-                    className="mt-4 flex items-center justify-between rounded-xl border border-gray-200 bg-white p-5 font-semibold text-gray-900 transition hover:border-emerald-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:hover:border-emerald-600"
-                >
-                    <span>{relatedTopicLabel}：{relatedTopic.title}</span>
-                    <span aria-hidden="true" className="text-emerald-700 dark:text-emerald-400">→</span>
-                </Link>
             </article>
         </main>
     );

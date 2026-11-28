@@ -47,14 +47,15 @@ describe('LearningTopicPage', () => {
                 title="テスト記事"
                 tags={['初心者']}
                 introduction="記事の概要"
-                sections={[]}
+                sections={[{id: 'sample-section', heading: 'セクション', body: '本文'}]}
                 relatedTopic={{href: '/learn/extra', title: '補足記事'}}
                 relatedTopicLabel="任意の補足"
                 roadmapHref="/asset-building-roadmap"
                 roadmapProgress={{
                     step: 3,
+                    totalSteps: 8,
                     nextHref: '/asset-building-roadmap#step-4',
-                    nextTitle: '長期・積立・分散を考える',
+                    nextTitle: '家計の収支を改善する',
                 }}
                 references={[{label: '金融庁の資料', href: 'https://example.com/reference'}]}
                 contentReviewedOn="2026年11月28日"
@@ -65,11 +66,12 @@ describe('LearningTopicPage', () => {
             'href',
             '/asset-building-roadmap'
         );
-        expect(screen.getByText('資産形成ロードマップ 3 / 5')).toBeInTheDocument();
-        expect(screen.getByRole('link', {name: /次の地点：長期・積立・分散を考える/})).toHaveAttribute(
+        expect(screen.getByText('資産形成ロードマップ 3 / 8')).toBeInTheDocument();
+        expect(screen.getByRole('link', {name: /次の地点：家計の収支を改善する/})).toHaveAttribute(
             'href',
             '/asset-building-roadmap#step-4'
         );
+        expect(document.getElementById('sample-section')).toBeInTheDocument();
         expect(screen.getByRole('link', {name: '任意の補足：補足記事'})).toHaveAttribute(
             'href',
             '/learn/extra'
@@ -79,5 +81,27 @@ describe('LearningTopicPage', () => {
             'noopener noreferrer'
         );
         expect(screen.getByText('最終確認日：2026年11月28日')).toBeInTheDocument();
+    });
+
+    it('主ルートの最終地点では完了メッセージを表示し、次の地点リンクを出さない', () => {
+        render(
+            <LearningTopicPage
+                category="制度を知る"
+                title="NISA"
+                tags={['初心者']}
+                introduction="記事の概要"
+                sections={[]}
+                relatedTopic={{href: '/learn/compound-interest', title: '複利'}}
+                roadmapProgress={{
+                    step: 8,
+                    totalSteps: 8,
+                    completionMessage: '主ルートはここまでです。口座開設は任意です。',
+                }}
+            />
+        );
+
+        expect(screen.getByText('資産形成ロードマップ 8 / 8')).toBeInTheDocument();
+        expect(screen.getByText('主ルートはここまでです。口座開設は任意です。')).toBeInTheDocument();
+        expect(screen.queryByRole('link', {name: /次の地点/})).not.toBeInTheDocument();
     });
 });

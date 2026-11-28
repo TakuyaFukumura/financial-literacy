@@ -6,6 +6,10 @@ describe('Home', () => {
         render(<Home/>);
 
         const topics = screen.getByRole('region', {name: 'テーマから学ぶ'});
+        expect(within(topics).getByRole('link', {name: /投資を考える前の家計整理/})).toHaveAttribute(
+            'href',
+            '/learn/pre-investment-household'
+        );
         expect(within(topics).getByRole('link', {name: /生活防衛資金/})).toHaveAttribute(
             'href',
             '/learn/emergency-fund'
@@ -27,7 +31,7 @@ describe('Home', () => {
             '/learn/inflation'
         );
         expect(within(topics).queryByRole('link', {name: /インフレリスク/})).not.toBeInTheDocument();
-        expect(within(topics).getByRole('link', {name: /金利/})).toHaveAttribute(
+        expect(within(topics).getByRole('link', {name: /利息の割合や、借りる側・預ける側への影響/})).toHaveAttribute(
             'href',
             '/learn/interest-rate'
         );

@@ -38,6 +38,13 @@ export default function EmergencyFundPage() {
                     href: 'https://www.jafp.or.jp/know/lifeplan/indication/',
                 },
             ]}
+            roadmapHref="/asset-building-roadmap"
+            roadmapProgress={{
+                step: 6,
+                totalSteps: 8,
+                nextHref: '/learn/long-term-installment-diversified',
+                nextTitle: '投資の基礎：長期・積立・分散',
+            }}
         />
     );
 }
