@@ -27,7 +27,7 @@ export default function NisaQuotaDiagram() {
 
             <div className="py-3 text-center text-sm font-semibold text-emerald-700 dark:text-emerald-300">
                 <span aria-hidden="true" className="block text-2xl leading-7">↓</span>
-                2つの枠を併用できます
+                <p>2つの枠を併用できます</p>
             </div>
 
             <div className="rounded-xl bg-gray-100 p-5 dark:bg-gray-700/60">

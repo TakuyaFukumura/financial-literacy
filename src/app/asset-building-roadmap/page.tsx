@@ -116,7 +116,7 @@ const roadmapStops: readonly RoadmapStop[] = [
     },
 ];
 
-function RoadmapStopCard({stop}: {stop: RoadmapStop}) {
+function RoadmapStopCard({stop}: {readonly stop: RoadmapStop}) {
     return (
         <div
             className={`relative z-10 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm
