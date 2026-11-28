@@ -6,6 +6,10 @@ describe('Home', () => {
         render(<Home/>);
 
         const topics = screen.getByRole('region', {name: 'テーマから学ぶ'});
+        expect(within(topics).getByRole('link', {name: /生活防衛資金/})).toHaveAttribute(
+            'href',
+            '/learn/emergency-fund'
+        );
         expect(within(topics).getByRole('link', {name: /単利/})).toHaveAttribute(
             'href',
             '/learn/simple-interest'
